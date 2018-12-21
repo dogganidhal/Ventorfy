@@ -537,7 +537,7 @@
           "ref/netstandard1.3/System.Diagnostics.Debug.dll": {}
         }
       },
-      "System.Diagnostics.DiagnosticSource/4.5.0": {
+      "System.Diagnostics.DiagnosticSource/4.5.1": {
         "type": "package",
         "compile": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
@@ -929,13 +929,25 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "Ventorfy.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Ventorfy.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ventorfy.Common.dll": {}
+        }
+      },
       "Ventorfy.DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "EntityFramework": "6.2.0",
           "Microsoft.EntityFrameworkCore": "2.2.0",
-          "MySql.Data.EntityFrameworkCore": "8.0.13"
+          "Microsoft.EntityFrameworkCore.Design": "2.2.0",
+          "MySql.Data.EntityFrameworkCore": "8.0.13",
+          "System.Diagnostics.DiagnosticSource": "4.5.1",
+          "Ventorfy.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Ventorfy.DataAccess.dll": {}
@@ -2035,10 +2047,10 @@
         "system.diagnostics.debug.nuspec"
       ]
     },
-    "System.Diagnostics.DiagnosticSource/4.5.0": {
-      "sha512": "UumL3CJklk5WyEt0eImPmjeuyY1JgJ7Thmg2hAeZGKCv+9iuuAsoc2wcXjypdo3J8VNEmVCH2Bgn/kIw8NI2bA==",
+    "System.Diagnostics.DiagnosticSource/4.5.1": {
+      "sha512": "/tu8MfTToEdI+I0L10NkGXqGuLDIvmkWqjnaSit3o8i5SZz8A0kz9YLxfZltFKbxmsOpYqnyoysPvPlQMZVwxg==",
       "type": "package",
-      "path": "system.diagnostics.diagnosticsource/4.5.0",
+      "path": "system.diagnostics.diagnosticsource/4.5.1",
       "files": [
         ".signature.p7s",
         "LICENSE.TXT",
@@ -2053,7 +2065,7 @@
         "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.xml",
         "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.dll",
         "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.xml",
-        "system.diagnostics.diagnosticsource.4.5.0.nupkg.sha512",
+        "system.diagnostics.diagnosticsource.4.5.1.nupkg.sha512",
         "system.diagnostics.diagnosticsource.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -3491,6 +3503,11 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "Ventorfy.Common/1.0.0": {
+      "type": "project",
+      "path": "../Ventorfy.Common/Ventorfy.Common.csproj",
+      "msbuildProject": "../Ventorfy.Common/Ventorfy.Common.csproj"
+    },
     "Ventorfy.DataAccess/1.0.0": {
       "type": "project",
       "path": "../Ventorfy.DataAccess/Ventorfy.DataAccess.csproj",
@@ -3522,7 +3539,7 @@
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/nidhaldogga/.nuget/NuGet/NuGet.Config"
+        "/Users/nidhaldogga/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -3557,6 +3574,7 @@
             "version": "[2.2.0, )"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true

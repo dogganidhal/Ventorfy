@@ -12,3 +12,5 @@
 /Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/obj/Debug/netcoreapp2.1/Ventorfy.Cli.csproj.CopyComplete
 /Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/obj/Debug/netcoreapp2.1/Ventorfy.Cli.dll
 /Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/obj/Debug/netcoreapp2.1/Ventorfy.Cli.pdb
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/bin/Debug/netcoreapp2.1/Ventorfy.Common.dll
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/bin/Debug/netcoreapp2.1/Ventorfy.Common.pdb

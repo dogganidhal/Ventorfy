@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Xml.Serialization;
 
 namespace Ventorfy.Common.Model
@@ -17,7 +18,7 @@ namespace Ventorfy.Common.Model
 				if (_Instance == null)
 				{
 					var serializer = new XmlSerializer(typeof(Configuration));
-					var reader = new StreamReader("./Resources/config.xml");
+					var reader = new FileStream("config.xml", FileMode.Open, FileAccess.Read);
 					_Instance = (Configuration)serializer.Deserialize(reader);
 					reader.Close();	
 				}

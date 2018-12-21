@@ -4,14 +4,21 @@ using Ventorfy.DataAccess;
 
 namespace Ventorfy.Cli
 {
-	class Program
+	class Migrator
 	{
+
+		public static void MigrateDatabase()
+		{
+			using (var context = new VentorfyDbContext())
+			{
+				var migrations = context.Database.GetMigrations();
+				Console.WriteLine(context.Database.GenerateCreateScript());
+			}
+		}
+		
 		static void Main(string[] args)
 		{
-			using (var context = new VentorfyDbContext(new DbContextOptionsBuilder<VentorfyDbContext>().Options))
-			{
-				Console.WriteLine("Hello World");
-			}
+			Migrator.MigrateDatabase();
 		}
 	}
 }

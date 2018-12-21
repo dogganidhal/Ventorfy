@@ -1,12 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ventorfy.Model", "Ventorfy.Model\Ventorfy.Model.csproj", "{11E16F0E-89CE-4464-9904-16159E119E89}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ventorfy.Playground", "Ventorfy.TestPlayground\Ventorfy.TestPlayground.csproj", "{0F4AB59F-B4AC-4940-933A-2A3139DB2884}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ventorfy.Repository", "Ventorfy.Repository\Ventorfy.Repository.csproj", "{9D64B163-7060-40C3-9997-5D170DB69098}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ventorfy.Common", "Ventorfy.Common\Ventorfy.Common.csproj", "{A956753A-8C03-47FF-9CF6-387138501F93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ventorfy.DataAccess", "Ventorfy.DataAccess\Ventorfy.DataAccess.csproj", "{48DC9566-768A-46CA-AB6F-E1A40BF7E0AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ventorfy.Cli", "Ventorfy.Cli\Ventorfy.Cli.csproj", "{85BBA736-E197-44A8-AA1F-F54A60CEB48C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ventorfy.Tests", "Ventorfy.Tests\Ventorfy.Tests.csproj", "{31F2494B-ADBD-4147-9363-5E156917E40F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,21 +14,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{11E16F0E-89CE-4464-9904-16159E119E89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11E16F0E-89CE-4464-9904-16159E119E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11E16F0E-89CE-4464-9904-16159E119E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11E16F0E-89CE-4464-9904-16159E119E89}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0F4AB59F-B4AC-4940-933A-2A3139DB2884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F4AB59F-B4AC-4940-933A-2A3139DB2884}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F4AB59F-B4AC-4940-933A-2A3139DB2884}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F4AB59F-B4AC-4940-933A-2A3139DB2884}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9D64B163-7060-40C3-9997-5D170DB69098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9D64B163-7060-40C3-9997-5D170DB69098}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9D64B163-7060-40C3-9997-5D170DB69098}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9D64B163-7060-40C3-9997-5D170DB69098}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A956753A-8C03-47FF-9CF6-387138501F93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A956753A-8C03-47FF-9CF6-387138501F93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A956753A-8C03-47FF-9CF6-387138501F93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A956753A-8C03-47FF-9CF6-387138501F93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48DC9566-768A-46CA-AB6F-E1A40BF7E0AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48DC9566-768A-46CA-AB6F-E1A40BF7E0AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48DC9566-768A-46CA-AB6F-E1A40BF7E0AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48DC9566-768A-46CA-AB6F-E1A40BF7E0AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85BBA736-E197-44A8-AA1F-F54A60CEB48C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85BBA736-E197-44A8-AA1F-F54A60CEB48C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85BBA736-E197-44A8-AA1F-F54A60CEB48C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85BBA736-E197-44A8-AA1F-F54A60CEB48C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31F2494B-ADBD-4147-9363-5E156917E40F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F2494B-ADBD-4147-9363-5E156917E40F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F2494B-ADBD-4147-9363-5E156917E40F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F2494B-ADBD-4147-9363-5E156917E40F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
