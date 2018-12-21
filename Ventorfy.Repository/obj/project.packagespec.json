@@ -1,0 +1,54 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Repository/Ventorfy.Repository.csproj",
+    "projectName": "Ventorfy.Repository",
+    "projectPath": "/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Repository/Ventorfy.Repository.csproj",
+    "outputPath": "/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Repository/obj/",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp2.1"
+    ],
+    "frameworks": {
+      "netcoreapp2.1": {
+        "projectReferences": {
+          "/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Common/Ventorfy.Common.csproj": {
+            "projectPath": "/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Common/Ventorfy.Common.csproj"
+          },
+          "/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Model/Ventorfy.Model.csproj": {
+            "projectPath": "/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Model/Ventorfy.Model.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.1": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.1.0, )",
+          "autoReferenced": true
+        },
+        "MySql.Data.EntityFrameworkCore": {
+          "target": "Package",
+          "version": "[8.0.13, )"
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

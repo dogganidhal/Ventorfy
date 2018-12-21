@@ -1,0 +1,9 @@
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Model/bin/Debug/netcoreapp2.1/Ventorfy.Model.deps.json
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Model/bin/Debug/netcoreapp2.1/Ventorfy.Model.dll
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Model/bin/Debug/netcoreapp2.1/Ventorfy.Model.pdb
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Model/obj/Debug/netcoreapp2.1/Ventorfy.Model.csprojAssemblyReference.cache
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Model/obj/Debug/netcoreapp2.1/Ventorfy.Model.csproj.CoreCompileInputs.cache
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Model/obj/Debug/netcoreapp2.1/Ventorfy.Model.AssemblyInfoInputs.cache
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Model/obj/Debug/netcoreapp2.1/Ventorfy.Model.AssemblyInfo.cs
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Model/obj/Debug/netcoreapp2.1/Ventorfy.Model.dll
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Model/obj/Debug/netcoreapp2.1/Ventorfy.Model.pdb

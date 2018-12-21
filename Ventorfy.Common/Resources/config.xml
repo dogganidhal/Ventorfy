@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+    <DbConnectionString>mysql://bfb9817aa1953a:141328a6@eu-cdbr-west-02.cleardb.net/heroku_6e5b46ff8aea73e?reconnect=true</DbConnectionString>
+</Configuration>
