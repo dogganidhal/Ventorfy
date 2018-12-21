@@ -1,4 +1,4 @@
-namespace Ventorfy.Model.Orders
+namespace Ventorfy.DataAccess.Model.Orders
 {
 	public class ClientOrder : Order
 	{

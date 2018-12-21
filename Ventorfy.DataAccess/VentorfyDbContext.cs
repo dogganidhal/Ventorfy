@@ -1,11 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using Ventorfy.Model.Inventory;
-using Ventorfy.Model.Orders;
-using Ventorfy.Model.Products;
-using Ventorfy.Model.Users;
-using Ventorfy.Common.Model;
+using Ventorfy.DataAccess.Model.Inventory;
+using Ventorfy.DataAccess.Model.Orders;
+using Ventorfy.DataAccess.Model.Products;
+using Ventorfy.DataAccess.Model.Users;
 
-namespace Ventorfy.Repository
+namespace Ventorfy.DataAccess
 {
 	public class VentorfyDbContext : DbContext
 	{
@@ -13,20 +12,25 @@ namespace Ventorfy.Repository
 		public DbSet<User> Users { get; set; }
 		public DbSet<Product> Products { get; set; }
 		public DbSet<ProductCategory> ProductCategories { get; set; }
-		public DbSet<ProductRepo> ProductRepos { get; set; }
+		public DbSet<ProductLot> ProductLots { get; set; }
 		public DbSet<ClientOrder> ClientOrders { get; set; }
 		public DbSet<OrderItem> OrderItems { get; set; }
 		public DbSet<ProviderOrder> ProviderOrders { get; set; }
 		public DbSet<Provider> Providers { get; set; }
 		public DbSet<Store> Stores { get; set; }
 
-		public VentorfyDbContext(DbContextOptions<VentorfyDbContext> options) : base(options)
+		public VentorfyDbContext() : base(new DbContextOptionsBuilder<VentorfyDbContext>().Options)
 		{
 		}
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseMySQL("Server=eu-cdbr-west-02.cleardb.net;database=heroku_6e5b46ff8aea73e;user=bfb9817aa1953a;password=141328a6");
+			optionsBuilder.UseMySQL("server=localhost;port=8889;user id=root;password=root;database=ventorfy");
+		}
+
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			modelBuilder.Entity<User>().HasKey(user => user.Id);
 		}
 	}
 }

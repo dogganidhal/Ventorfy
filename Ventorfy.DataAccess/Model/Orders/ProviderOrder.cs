@@ -1,10 +1,12 @@
-using Ventorfy.Model.Inventory;
+using System.ComponentModel.DataAnnotations;
+using Ventorfy.DataAccess.Model.Inventory;
 
-namespace Ventorfy.Model.Orders
+namespace Ventorfy.DataAccess.Model.Orders
 {
 	public class ProviderOrder : Order
 	{
 
+		[Required]
 		public Provider Provider { get; set; }
 		
 	}

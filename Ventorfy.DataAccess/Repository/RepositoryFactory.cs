@@ -1,4 +1,4 @@
-﻿namespace Ventorfy.Repository
+﻿namespace Ventorfy.DataAccess.Repository
 {
 	public class RepositoryFactory
 	{
