@@ -30,7 +30,11 @@ namespace Ventorfy.DataAccess
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-			modelBuilder.Entity<User>().HasKey(user => user.Id);
+			modelBuilder.Entity<User>()
+				.HasIndex(user => user.UserName)
+				.IsUnique();
+			modelBuilder.Entity<User>()
+				.HasKey(user => user.Id);
 		}
 	}
 }

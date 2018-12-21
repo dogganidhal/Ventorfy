@@ -18,9 +18,9 @@ namespace Ventorfy.DataAccess.Repository.Users
 			this._Context = context;
 		}
 		
-		public async Task<User> CreateUser(string username, string password, string fullName)
+		public async Task<User> CreateUser(string userName, string password, string fullName)
 		{
-			var user = new User(username, fullName, SecurePasswordHasher.Hash(password));
+			var user = new User(userName, fullName, SecurePasswordHasher.Hash(password));
 			var entityEntry = await this._Context.Users.AddAsync(user);
 			await this._Context.SaveChangesAsync();
 			return entityEntry.Entity;
