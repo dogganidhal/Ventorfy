@@ -1,0 +1,14 @@
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/bin/Debug/netcoreapp2.1/Ventorfy.Cli.deps.json
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/bin/Debug/netcoreapp2.1/Ventorfy.Cli.runtimeconfig.json
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/bin/Debug/netcoreapp2.1/Ventorfy.Cli.runtimeconfig.dev.json
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/bin/Debug/netcoreapp2.1/Ventorfy.Cli.dll
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/bin/Debug/netcoreapp2.1/Ventorfy.Cli.pdb
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/bin/Debug/netcoreapp2.1/Ventorfy.DataAccess.dll
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/bin/Debug/netcoreapp2.1/Ventorfy.DataAccess.pdb
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/obj/Debug/netcoreapp2.1/Ventorfy.Cli.csprojAssemblyReference.cache
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/obj/Debug/netcoreapp2.1/Ventorfy.Cli.csproj.CoreCompileInputs.cache
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/obj/Debug/netcoreapp2.1/Ventorfy.Cli.AssemblyInfoInputs.cache
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/obj/Debug/netcoreapp2.1/Ventorfy.Cli.AssemblyInfo.cs
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/obj/Debug/netcoreapp2.1/Ventorfy.Cli.csproj.CopyComplete
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/obj/Debug/netcoreapp2.1/Ventorfy.Cli.dll
+/Users/nidhaldogga/Projects/Ventorfy/Ventorfy.Cli/obj/Debug/netcoreapp2.1/Ventorfy.Cli.pdb

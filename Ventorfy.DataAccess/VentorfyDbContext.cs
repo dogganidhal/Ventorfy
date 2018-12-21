@@ -26,7 +26,7 @@ namespace Ventorfy.Repository
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseMySQL(Configuration.Instance.DbConnectionString);
+			optionsBuilder.UseMySQL("Server=eu-cdbr-west-02.cleardb.net;database=heroku_6e5b46ff8aea73e;user=bfb9817aa1953a;password=141328a6");
 		}
 	}
 }
