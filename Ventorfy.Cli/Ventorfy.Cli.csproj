@@ -9,9 +9,4 @@
       <ProjectReference Include="..\Ventorfy.DataAccess\Ventorfy.DataAccess.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <PackageReference Include="EntityFramework" Version="6.2.0" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.0" />
-    </ItemGroup>
-
 </Project>
