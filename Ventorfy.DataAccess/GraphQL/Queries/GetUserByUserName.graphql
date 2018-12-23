@@ -1,0 +1,16 @@
+query GetUserByUserName($UserName: String) {
+  User(where: {
+    UserName: {
+      _eq: $UserName
+    }
+  }) {
+    Id
+    UserName
+    FullName
+    PasswordHash
+    Store {
+      Id
+      Name
+    }
+  }
+}

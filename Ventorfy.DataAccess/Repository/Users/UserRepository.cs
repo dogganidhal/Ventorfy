@@ -1,9 +1,14 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+using GraphQL.Client;
+using GraphQL.Common.Exceptions;
 using Ventorfy.Common.Exceptions;
 using Ventorfy.Common.Utils;
+using Ventorfy.DataAccess.GraphQL;
+using Ventorfy.DataAccess.GraphQL.Mutations;
+using Ventorfy.DataAccess.GraphQL.Queries;
 using Ventorfy.DataAccess.Model.Users;
 
 namespace Ventorfy.DataAccess.Repository.Users
@@ -11,34 +16,47 @@ namespace Ventorfy.DataAccess.Repository.Users
 	public class UserRepository : IUserRepository
 	{
 
-		private readonly VentorfyDbContext _Context;
+		private GraphQLClient _Client;
 
-		public UserRepository(VentorfyDbContext context)
+		public UserRepository(GraphQLClientOptions options)
 		{
-			this._Context = context;
+			this._Client = new GraphQLClient(options);
 		}
 		
 		public async Task<User> CreateUser(string userName, string password, string fullName)
 		{
-			var user = new User(userName, fullName, SecurePasswordHasher.Hash(password));
-			var entityEntry = await this._Context.Users.AddAsync(user);
-			await this._Context.SaveChangesAsync();
-			return entityEntry.Entity;
+			
+			var request = new InsertUserRequest(userName: userName, fullName: fullName, passwordHash: SecurePasswordHasher.Hash(password));
+			var response = await this._Client.PostAsync(request);
+
+			if (response.Errors?.Length > 0)
+			{
+				throw new DuplicateUserException(userName);
+			}
+			
+			var insertResult = response.GetDataFieldAs<InsertResult<User>>("insert_User");
+
+			return insertResult.Result.First();
+
 		}
 
 		public async Task<User> Login(string userName, string password)
 		{
-			try
-			{
-				var user = await this._Context.Users.Where(u => u.UserName == userName).FirstAsync();
-				if (SecurePasswordHasher.Verify(password, user.PasswordHash))
-					return user;
-			}
-			catch (Exception)
-			{
+			
+			var request = new GetUserByUserNameRequest(userName);
+			var response = await this._Client.PostAsync(request);
+			var users = response.GetDataFieldAs<ICollection<User>>("User");
+			
+			if (!users.Any())
 				throw new AccountNotFoundException(userName);
-			}
-			throw new WrongPasswordException();
+
+			var user = users.First();
+
+			if (!SecurePasswordHasher.Verify(password, user.PasswordHash))
+				throw new WrongPasswordException();
+
+			return user;
+			
 		}
 		
 	}

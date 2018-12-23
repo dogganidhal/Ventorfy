@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.Internal;
+﻿using System;
+using GraphQL.Client;
 using Ventorfy.DataAccess.Repository.Users;
 
 namespace Ventorfy.DataAccess.Repository
@@ -6,19 +7,19 @@ namespace Ventorfy.DataAccess.Repository
 	public class RepositoryFactory
 	{
 		
-		private readonly VentorfyDbContext _Context = new VentorfyDbContext();
+		public static RepositoryFactory Instance => _Instance;
 		
 		private static RepositoryFactory _Instance = new RepositoryFactory();
-		public static RepositoryFactory Instance => _Instance;
+		private GraphQLClientOptions _GraphQlClientOptions = new GraphQLClientOptions();
 
 		private RepositoryFactory()
 		{
-			
+			this._GraphQlClientOptions.EndPoint = new Uri("https://ventorfy.herokuapp.com/v1alpha1/graphql");
 		}
 
 		public IUserRepository CreateUserRepository()
 		{
-			return new UserRepository(this._Context);
+			return new UserRepository(_GraphQlClientOptions);
 		}
 		
 	}

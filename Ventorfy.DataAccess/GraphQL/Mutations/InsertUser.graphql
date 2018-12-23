@@ -1,0 +1,15 @@
+mutation InsertUser($UserName: String, $FullName: String, $PasswordHash: String) {
+  insert_User(
+    objects: [
+      {UserName: $UserName, FullName: $FullName, PasswordHash: $PasswordHash}
+    ]
+  )
+  {
+    returning {
+      Id
+      UserName
+      FullName
+      PasswordHash
+    }
+  }
+}

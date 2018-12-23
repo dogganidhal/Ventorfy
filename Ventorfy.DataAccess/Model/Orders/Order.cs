@@ -10,16 +10,9 @@ namespace Ventorfy.DataAccess.Model.Orders
 	public abstract class Order
 	{
 		
-		[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int Id { get; set; }
-		
-		[Required]
 		public DateTime Date { get; set; }
-		
-		[Required]
 		public IEnumerable<OrderItem> Items { get; set; }
-		
-		[Required]
 		public User Author { get; set; }
 
 		public double ComputePrice()
