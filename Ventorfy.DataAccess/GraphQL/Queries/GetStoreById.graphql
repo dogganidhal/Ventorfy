@@ -1,0 +1,21 @@
+query GetStoreById($id: ID) {
+  Store(where:{
+    Id: {
+      _eq: $id
+    }
+  })
+  {
+    Id
+    Name
+    Admin {
+      Id
+      UserName
+      FullName
+    }
+    StaffMembers {
+      Id
+      UserName
+      FullName
+    }
+  }
+}

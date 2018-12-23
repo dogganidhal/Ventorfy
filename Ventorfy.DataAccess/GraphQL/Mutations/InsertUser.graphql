@@ -1,7 +1,7 @@
-mutation InsertUser($UserName: String, $FullName: String, $PasswordHash: String) {
+mutation InsertUser($userName: String, $fullName: String, $passwordHash: String, $storeId: ID = null) {
   insert_User(
     objects: [
-      {UserName: $UserName, FullName: $FullName, PasswordHash: $PasswordHash}
+      {UserName: $userName, FullName: $fullName, PasswordHash: $passwordHash, StoreId: $storeId}
     ]
   )
   {
@@ -10,6 +10,10 @@ mutation InsertUser($UserName: String, $FullName: String, $PasswordHash: String)
       UserName
       FullName
       PasswordHash
+      Store {
+        Id
+        Name
+      }
     }
   }
 }

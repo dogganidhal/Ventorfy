@@ -1,5 +1,6 @@
 ﻿using System;
 using GraphQL.Client;
+using Ventorfy.DataAccess.Repository.Inventory;
 using Ventorfy.DataAccess.Repository.Users;
 
 namespace Ventorfy.DataAccess.Repository
@@ -7,10 +8,9 @@ namespace Ventorfy.DataAccess.Repository
 	public class RepositoryFactory
 	{
 		
-		public static RepositoryFactory Instance => _Instance;
-		
-		private static RepositoryFactory _Instance = new RepositoryFactory();
-		private GraphQLClientOptions _GraphQlClientOptions = new GraphQLClientOptions();
+		public static RepositoryFactory Instance { get; } = new RepositoryFactory();
+
+		private readonly GraphQLClientOptions _GraphQlClientOptions = new GraphQLClientOptions();
 
 		private RepositoryFactory()
 		{
@@ -20,6 +20,11 @@ namespace Ventorfy.DataAccess.Repository
 		public IUserRepository CreateUserRepository()
 		{
 			return new UserRepository(_GraphQlClientOptions);
+		}
+
+		public IStoreRepository CreateStoreRepository()
+		{
+			return new StoreRepository(_GraphQlClientOptions);
 		}
 		
 	}

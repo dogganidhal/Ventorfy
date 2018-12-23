@@ -15,7 +15,16 @@
 
     <ItemGroup>
       <None Remove="GraphQL\Queries\GetUserByUserName.graphql" />
-      <EmbeddedResource Include="GraphQL\Queries\GetUserByUserName.graphql" />
+      <Resource Include="GraphQL\Queries\GetUserByUserName.graphql" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="GraphQL\Mutations\InsertStore.graphql" />
+      <Resource Include="GraphQL\Mutations\InsertStore.graphql" />
+      <None Remove="GraphQL\Mutations\InsertUser.graphql" />
+      <Resource Include="GraphQL\Mutations\InsertUser.graphql">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
     </ItemGroup>
 
 </Project>

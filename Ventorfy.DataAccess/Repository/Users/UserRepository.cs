@@ -16,7 +16,7 @@ namespace Ventorfy.DataAccess.Repository.Users
 	public class UserRepository : IUserRepository
 	{
 
-		private GraphQLClient _Client;
+		private readonly GraphQLClient _Client;
 
 		public UserRepository(GraphQLClientOptions options)
 		{

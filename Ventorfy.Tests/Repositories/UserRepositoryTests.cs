@@ -1,23 +1,27 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using GraphQL.Client;
 using Ventorfy.Common.Exceptions;
 using Ventorfy.Common.Utils;
+using Ventorfy.DataAccess.GraphQL.Queries;
 using Ventorfy.DataAccess.Model.Users;
 using Ventorfy.DataAccess.Repository;
 using Ventorfy.DataAccess.Repository.Users;
 using Xunit;
 
-namespace Ventorfy.Tests
+namespace Ventorfy.Tests.Repositories
 {
 	public class UserRepositoryTests
 	{
 
-		private readonly IUserRepository _UserRepository;
+		private readonly IUserRepository _Repository;
 		private readonly User _TestUser;
 
 		public UserRepositoryTests()
 		{
-			this._UserRepository = RepositoryFactory.Instance.CreateUserRepository();
-			this._TestUser = this._UserRepository.CreateUser(userName: Guid.NewGuid().ToString(), password: "123456", fullName: "John Doe").Result;
+			this._Repository = RepositoryFactory.Instance.CreateUserRepository();
+			this._TestUser = this._Repository.CreateUser(userName: Guid.NewGuid().ToString(), password: "123456", fullName: "John Doe").Result;
 		}
 		
 		[Fact]
@@ -27,7 +31,16 @@ namespace Ventorfy.Tests
 			var userName = Guid.NewGuid().ToString();
 			var fullName = Guid.NewGuid().ToString();
 			var password = Guid.NewGuid().ToString();
-			var user = await this._UserRepository.CreateUser(userName: userName, password: password, fullName: fullName);
+			await this._Repository.CreateUser(userName: userName, password: password, fullName: fullName);
+
+			var client = new GraphQLClient("https://ventorfy.herokuapp.com/v1alpha1/graphql");
+			var request = new GetUserByUserNameRequest(userName);
+			var response = await client.PostAsync(request);
+			var users = response.GetDataFieldAs<ICollection<User>>("User");
+			
+			Assert.NotEmpty(users);
+
+			var user = users.First();
 			
 			Assert.Equal(userName, user.UserName);
 			Assert.Equal(fullName, user.FullName);
@@ -42,7 +55,7 @@ namespace Ventorfy.Tests
 			var userName = Guid.NewGuid().ToString();
 			var fullName = Guid.NewGuid().ToString();
 			var password = Guid.NewGuid().ToString();
-			var user  = await this._UserRepository.CreateUser(userName: userName, password: password, fullName: fullName);
+			var user  = await this._Repository.CreateUser(userName: userName, password: password, fullName: fullName);
 
 			Assert.NotNull(user.Id);
 
@@ -50,13 +63,13 @@ namespace Ventorfy.Tests
 		[Fact]
 		public async void CreateUser_ThrowsOnDuplicateUserName()
 		{
-			await Assert.ThrowsAnyAsync<DuplicateUserException>(async () => await this._UserRepository.CreateUser(userName: this._TestUser.UserName, password: "", fullName: ""));
+			await Assert.ThrowsAnyAsync<DuplicateUserException>(async () => await this._Repository.CreateUser(userName: this._TestUser.UserName, password: "", fullName: ""));
 		}
 
 		[Fact]
 		public async void Login_ReturnsUserWhenOk()
 		{
-			var user = await this._UserRepository.Login(userName: this._TestUser.UserName, password: "123456");
+			var user = await this._Repository.Login(userName: this._TestUser.UserName, password: "123456");
 				
 			Assert.Equal(user.Id, this._TestUser.Id);
 			Assert.Equal(user.UserName, this._TestUser.UserName);
@@ -68,14 +81,14 @@ namespace Ventorfy.Tests
 		public async void Login_ThrowsAccountNotFoundExceptionForWrongEmail()
 		{
 			await Assert.ThrowsAsync<AccountNotFoundException>(async () =>
-				await this._UserRepository.Login(userName: "DOES_NOT_EXIST", password: "WHATEVER"));
+				await this._Repository.Login(userName: "DOES_NOT_EXIST", password: "WHATEVER"));
 		}
 		
 		[Fact]
 		public async void Login_ThrowsWrongPasswordExceptionForWrongPassword()
 		{
 			await Assert.ThrowsAsync<WrongPasswordException>(async () =>
-				await this._UserRepository.Login(userName: this._TestUser.UserName, password: "WRONG_PASSWORD"));
+				await this._Repository.Login(userName: this._TestUser.UserName, password: "WRONG_PASSWORD"));
 		}
 		
 	}
