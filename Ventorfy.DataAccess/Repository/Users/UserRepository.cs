@@ -8,7 +8,9 @@ using Ventorfy.Common.Exceptions;
 using Ventorfy.Common.Utils;
 using Ventorfy.DataAccess.GraphQL;
 using Ventorfy.DataAccess.GraphQL.Mutations;
+using Ventorfy.DataAccess.GraphQL.Mutations.User;
 using Ventorfy.DataAccess.GraphQL.Queries;
+using Ventorfy.DataAccess.GraphQL.Queries.User;
 using Ventorfy.DataAccess.Model.Users;
 
 namespace Ventorfy.DataAccess.Repository.Users

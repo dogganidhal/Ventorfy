@@ -1,7 +1,7 @@
 using System;
 using GraphQL.Common.Request;
 
-namespace Ventorfy.DataAccess.GraphQL.Mutations
+namespace Ventorfy.DataAccess.GraphQL.Mutations.Store
 {
 	public class InsertStoreRequest : GraphQLRequest
 	{

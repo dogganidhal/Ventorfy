@@ -1,0 +1,13 @@
+mutation InsertProduct($name: String!) {
+  insert_ProductCategory(
+    objects: [
+      {Name: $name}
+    ]
+  )
+  {
+    returning {
+      Id
+      Name
+    }
+  }
+}

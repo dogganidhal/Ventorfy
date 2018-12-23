@@ -1,6 +1,6 @@
 using GraphQL.Common.Request;
 
-namespace Ventorfy.DataAccess.GraphQL.Queries
+namespace Ventorfy.DataAccess.GraphQL.Queries.User
 {
 	public class GetUserByUserNameRequest : GraphQLRequest
 	{

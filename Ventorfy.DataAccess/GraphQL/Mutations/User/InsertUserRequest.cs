@@ -1,8 +1,7 @@
 using System;
 using GraphQL.Common.Request;
-using Ventorfy.DataAccess.Model.Users;
 
-namespace Ventorfy.DataAccess.GraphQL.Mutations
+namespace Ventorfy.DataAccess.GraphQL.Mutations.User
 {
 	public class InsertUserRequest : GraphQLRequest
 	{

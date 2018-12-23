@@ -7,7 +7,7 @@ namespace Ventorfy.DataAccess.Model.Inventory
 	public class Provider
 	{
 		
-		public int Id { get; set; }
+		public Guid Id { get; set; }
 		public string Name { set; get; }
 		
 	}

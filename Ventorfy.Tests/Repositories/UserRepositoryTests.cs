@@ -5,6 +5,7 @@ using GraphQL.Client;
 using Ventorfy.Common.Exceptions;
 using Ventorfy.Common.Utils;
 using Ventorfy.DataAccess.GraphQL.Queries;
+using Ventorfy.DataAccess.GraphQL.Queries.User;
 using Ventorfy.DataAccess.Model.Users;
 using Ventorfy.DataAccess.Repository;
 using Ventorfy.DataAccess.Repository.Users;

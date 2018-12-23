@@ -7,8 +7,8 @@ namespace Ventorfy.DataAccess.Model.Products
 	public class ProductCategory
 	{
 
-		public int Id{ get; set; }
-		public int Name { get; set; }
+		public Guid Id { get; set; } 
+		public string Name { get; set; }
 
 	}
 }

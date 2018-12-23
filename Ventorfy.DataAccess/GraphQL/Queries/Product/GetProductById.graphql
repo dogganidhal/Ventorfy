@@ -1,0 +1,21 @@
+query GetProductById($id:ID!) {
+  Product(where:{
+    Id: {
+      _eq: $id
+    }
+  })
+  {
+    Id
+    Name,
+    Reference
+    Price
+    Provider {
+      Id
+      Name
+    }
+    Category {
+      Id
+      Name
+    }
+  }
+}

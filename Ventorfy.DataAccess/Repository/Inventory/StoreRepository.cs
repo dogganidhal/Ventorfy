@@ -4,6 +4,8 @@ using GraphQL.Client;
 using Ventorfy.Common.Utils;
 using Ventorfy.DataAccess.GraphQL;
 using Ventorfy.DataAccess.GraphQL.Mutations;
+using Ventorfy.DataAccess.GraphQL.Mutations.Store;
+using Ventorfy.DataAccess.GraphQL.Mutations.User;
 using Ventorfy.DataAccess.Model.Inventory;
 using Ventorfy.DataAccess.Model.Users;
 
