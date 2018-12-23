@@ -1,0 +1,14 @@
+mutation InsertProvider($name: String!) {
+  insert_Provider(
+    objects: [
+      {Name: $name}
+    ]
+  )
+  {
+    returning {
+      Id
+      Name
+    }
+  }
+  
+}

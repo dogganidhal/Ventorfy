@@ -1,6 +1,7 @@
 ﻿using System;
 using GraphQL.Client;
 using Ventorfy.DataAccess.Repository.Inventory;
+using Ventorfy.DataAccess.Repository.Products;
 using Ventorfy.DataAccess.Repository.Users;
 
 namespace Ventorfy.DataAccess.Repository
@@ -19,12 +20,17 @@ namespace Ventorfy.DataAccess.Repository
 
 		public IUserRepository CreateUserRepository()
 		{
-			return new UserRepository(_GraphQlClientOptions);
+			return new UserRepository(this._GraphQlClientOptions);
 		}
 
 		public IStoreRepository CreateStoreRepository()
 		{
-			return new StoreRepository(_GraphQlClientOptions);
+			return new StoreRepository(this._GraphQlClientOptions);
+		}
+
+		public IProductRepository CreateProductRepository()
+		{
+			return new ProductRepository(this._GraphQlClientOptions);
 		}
 		
 	}

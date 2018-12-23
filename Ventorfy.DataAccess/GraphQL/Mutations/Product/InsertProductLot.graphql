@@ -1,0 +1,33 @@
+mutation InsertProductLot($productId: ID!, $storeId: ID!){
+  insert_ProductLot(objects:[
+    {
+      ProductId: $productId,
+      Quantity: 0,
+      StoreId: $storeId
+    }
+  ])
+  {
+    returning {
+      Id
+      Quantity
+      Store {
+        Id
+        Name
+      }
+      Product {
+        Id
+        Name
+        Reference
+        Price
+        Provider {
+          Id
+          Name
+        }
+        Category {
+          Id
+          Name
+        }
+      }
+    }
+  }
+}

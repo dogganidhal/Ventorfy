@@ -1,6 +1,6 @@
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
+using Ventorfy.DataAccess.Model.Products;
 
 namespace Ventorfy.DataAccess.Model.Inventory
 {
@@ -9,6 +9,7 @@ namespace Ventorfy.DataAccess.Model.Inventory
 		
 		public Guid Id { get; set; }
 		public string Name { set; get; }
+		public ICollection<Product> Products { get; set; }
 		
 	}
 }

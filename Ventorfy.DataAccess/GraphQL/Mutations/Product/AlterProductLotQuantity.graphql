@@ -1,0 +1,34 @@
+mutation AlterProductLotQuantity($productLotId: ID!, $newQuantity: Int!) {
+  update_ProductLot(_set:{
+    Quantity: $newQuantity
+  }, where: {
+    Id: {
+      _eq: $productLotId
+    }
+  })
+  {
+    returning {
+      Id
+      Quantity
+      Product {
+        Id
+        Name
+        Reference
+        Price
+        Category {
+          Name
+          Id
+        }
+      }
+      Store {
+        Id
+        Name
+        Admin {
+          Id
+          FullName
+          UserName
+        }
+      }
+    }
+  }
+}

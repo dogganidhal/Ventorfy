@@ -12,10 +12,11 @@ namespace Ventorfy.DataAccess.Repository.Products
 	{
 		
 		Task<ProductCategory> CreateProductCategory(string name);
-		Task<Product> CreateProduct(string reference, ProductCategory category, double price, Provider provider = null, string name = null);
+		Task<Product> CreateProduct(Store store, string reference, ProductCategory category, double price,
+			Provider provider = null, string name = null);
 		Task<Product> GetProductById(Guid id);
-		Task<ProductLot> AlterQuantity(Product product, AlterQuantityDelegate @delegate);
-		Task<Product> SetProvider(Product product, string providerName);
+		Task<ProductLot> AlterQuantity(ProductLot productLot, AlterQuantityDelegate @delegate);
+		Task<Product> SetProvider(Product product, Guid providerName);
 
 	}
 }

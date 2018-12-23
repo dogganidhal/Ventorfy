@@ -1,0 +1,25 @@
+mutation UpdateProduct_SetProvider($id: ID!, $providerId: ID!) {
+  update_Product(_set: {
+    ProviderId: $providerId
+  }, where:{
+    Id: {
+      _eq: $id
+    }
+  })
+  {
+    returning {
+      Id
+      Name
+      Reference
+      Price
+      Provider {
+        Id
+        Name
+      }
+      Category {
+        Id
+        Name
+      }
+    }
+  }
+}
