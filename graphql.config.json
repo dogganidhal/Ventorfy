@@ -11,7 +11,8 @@
       "url": "https://ventorfy.herokuapp.com/v1alpha1/graphql",
       "options" : {
         "headers": {
-          "user-agent" : "JS GraphQL"
+          "user-agent" : "JS GraphQL",
+          "x-hasura-access-key": "insta2018"
         }
       }
     }

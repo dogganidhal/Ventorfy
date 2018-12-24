@@ -1,7 +1,5 @@
 
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using Ventorfy.DataAccess.Model.Inventory;
 
 namespace Ventorfy.DataAccess.Model.Products

@@ -1,5 +1,6 @@
 ﻿using System;
 using GraphQL.Client;
+using Ventorfy.DataAccess.GraphQL;
 using Ventorfy.DataAccess.Repository.Inventory;
 using Ventorfy.DataAccess.Repository.Products;
 using Ventorfy.DataAccess.Repository.Users;
@@ -11,26 +12,27 @@ namespace Ventorfy.DataAccess.Repository
 		
 		public static RepositoryFactory Instance { get; } = new RepositoryFactory();
 
-		private readonly GraphQLClientOptions _GraphQlClientOptions = new GraphQLClientOptions();
+		public IUserRepository UserRepository
+		{
+			// TODO: Check network health, then decide which Implementor of IUserRepository to instantiate
+			get => new UserRepository(GraphQLUtils.CreateGraphQlClient());
+		}
+		
+		public IStoreRepository StoreRepository
+		{
+			// TODO: Check network health, then decide which Implementor of IStoreRepository to instantiate
+			get => new StoreRepository(GraphQLUtils.CreateGraphQlClient());
+		}
+		
+		public IProductRepository ProductRepository
+		{
+			// TODO: Check network health, then decide which Implementor of IProductRepository to instantiate
+			get => new ProductRepository(GraphQLUtils.CreateGraphQlClient());
+		}
 
 		private RepositoryFactory()
 		{
-			this._GraphQlClientOptions.EndPoint = new Uri("https://ventorfy.herokuapp.com/v1alpha1/graphql");
-		}
-
-		public IUserRepository CreateUserRepository()
-		{
-			return new UserRepository(this._GraphQlClientOptions);
-		}
-
-		public IStoreRepository CreateStoreRepository()
-		{
-			return new StoreRepository(this._GraphQlClientOptions);
-		}
-
-		public IProductRepository CreateProductRepository()
-		{
-			return new ProductRepository(this._GraphQlClientOptions);
+			
 		}
 		
 	}

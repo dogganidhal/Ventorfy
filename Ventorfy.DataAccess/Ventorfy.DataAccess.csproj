@@ -15,11 +15,31 @@
 
     <ItemGroup>
       <None Remove="GraphQL\Queries\GetUserByUserName.graphql" />
-      <Resource Include="GraphQL\Mutations\Store\InsertStore.graphql" />
-      <Resource Include="GraphQL\Mutations\User\InsertUser.graphql">
+      <EmbeddedResource Include="GraphQL\Mutations\Store\InsertStore.graphql" />
+      <EmbeddedResource Include="GraphQL\Mutations\User\InsertUser.graphql">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Resource>
-      <Resource Include="GraphQL\Queries\User\GetUserByUserName.graphql" />
+      </EmbeddedResource>
+      <EmbeddedResource Include="GraphQL\Queries\User\GetUserByUserName.graphql" />
+      <None Remove="GraphQL\Queries\Product\GetProductById.graphql" />
+      <EmbeddedResource Include="GraphQL\Queries\Product\GetProductById.graphql" />
+      <None Remove="GraphQL\Queries\Store\GetStoreById.graphql" />
+      <EmbeddedResource Include="GraphQL\Queries\Store\GetStoreById.graphql" />
+      <None Remove="GraphQL\Queries\Product\GetProductCategoryById.graphql" />
+      <EmbeddedResource Include="GraphQL\Queries\Product\GetProductCategoryById.graphql" />
+      <None Remove="GraphQL\Mutations\Provider\InsertProvider.graphql" />
+      <EmbeddedResource Include="GraphQL\Mutations\Provider\InsertProvider.graphql" />
+      <None Remove="GraphQL\Mutations\Product\AlterProductLotQuantity.graphql" />
+      <EmbeddedResource Include="GraphQL\Mutations\Product\AlterProductLotQuantity.graphql" />
+      <None Remove="GraphQL\Mutations\Product\InsertProduct.graphql" />
+      <EmbeddedResource Include="GraphQL\Mutations\Product\InsertProduct.graphql" />
+      <None Remove="GraphQL\Mutations\Product\InsertProductLot.graphql" />
+      <EmbeddedResource Include="GraphQL\Mutations\Product\InsertProductLot.graphql" />
+      <None Remove="GraphQL\Mutations\Product\UpdateProduct_SetProductLot.graphql" />
+      <EmbeddedResource Include="GraphQL\Mutations\Product\UpdateProduct_SetProductLot.graphql" />
+      <None Remove="GraphQL\Mutations\Product\UpdateProduct_SetProvider.graphql" />
+      <EmbeddedResource Include="GraphQL\Mutations\Product\UpdateProduct_SetProvider.graphql" />
+      <None Remove="GraphQL\Mutations\Product\InsertProductCategory.graphql" />
+      <EmbeddedResource Include="GraphQL\Mutations\Product\InsertProductCategory.graphql" />
     </ItemGroup>
 
     <ItemGroup>

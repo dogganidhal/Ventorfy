@@ -1,4 +1,4 @@
-mutation InsertProduct($name: String!) {
+mutation InsertProductCategory($name: String!) {
   insert_ProductCategory(
     objects: [
       {Name: $name}
@@ -8,6 +8,24 @@ mutation InsertProduct($name: String!) {
     returning {
       Id
       Name
+      Products {
+        Id
+        Name
+        Reference
+        Price
+        Provider {
+          Id
+          Name
+        }
+        ProductLot {
+          Id
+          Quantity
+          Store {
+            Id
+            Name
+          }
+        }
+      }
     }
   }
 }

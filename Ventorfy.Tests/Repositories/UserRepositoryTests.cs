@@ -4,8 +4,8 @@ using System.Linq;
 using GraphQL.Client;
 using Ventorfy.Common.Exceptions;
 using Ventorfy.Common.Utils;
+using Ventorfy.DataAccess.GraphQL;
 using Ventorfy.DataAccess.GraphQL.Queries;
-using Ventorfy.DataAccess.GraphQL.Queries.User;
 using Ventorfy.DataAccess.Model.Users;
 using Ventorfy.DataAccess.Repository;
 using Ventorfy.DataAccess.Repository.Users;
@@ -17,12 +17,13 @@ namespace Ventorfy.Tests.Repositories
 	{
 
 		private readonly IUserRepository _Repository;
+		private readonly GraphQLClient _Client = GraphQLUtils.CreateGraphQlClient();
 		private readonly User _TestUser;
 
 		public UserRepositoryTests()
 		{
-			this._Repository = RepositoryFactory.Instance.CreateUserRepository();
-			this._TestUser = this._Repository.CreateUser(userName: Guid.NewGuid().ToString(), password: "123456", fullName: "John Doe").Result;
+			this._Repository = RepositoryFactory.Instance.UserRepository;
+			this._TestUser = this._Repository.CreateUser(userName: Guid.NewGuid().ToString(), password: "123456", fullName: "David Beckham").Result;
 		}
 		
 		[Fact]
@@ -34,9 +35,12 @@ namespace Ventorfy.Tests.Repositories
 			var password = Guid.NewGuid().ToString();
 			await this._Repository.CreateUser(userName: userName, password: password, fullName: fullName);
 
-			var client = new GraphQLClient("https://ventorfy.herokuapp.com/v1alpha1/graphql");
-			var request = new GetUserByUserNameRequest(userName);
-			var response = await client.PostAsync(request);
+			var request = GraphQLQueryManager.GetQueryRequest(
+				GraphQLQueryManager.QueryRequest.GetUserByUserName, new
+				{
+					UserName = userName
+				});
+			var response = await this._Client.PostAsync(request);
 			var users = response.GetDataFieldAs<ICollection<User>>("User");
 			
 			Assert.NotEmpty(users);

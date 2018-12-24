@@ -1,7 +1,7 @@
-query GetUserByUserName($UserName: String) {
+query GetUserByUserName($userName: String) {
   User(where: {
     UserName: {
-      _eq: $UserName
+      _eq: $userName
     }
   }) {
     Id
