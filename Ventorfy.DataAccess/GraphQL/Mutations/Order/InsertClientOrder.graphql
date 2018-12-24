@@ -1,0 +1,19 @@
+mutation InsertClientOrder($authorId: ID!) {
+  insert_ClientOrder(objects:{
+    AuthorId: $authorId
+  }) {
+    returning {
+      Id
+      Date
+      Author {
+        Id
+        UserName
+        FullName
+        Store {
+          Id
+          Name
+        }
+      }
+    }
+  }
+}

@@ -20,6 +20,10 @@ namespace Ventorfy.DataAccess.GraphQL.Mutations
 			public static string InsertProductLot = "Product.InsertProductLot.graphql";
 			public static string InsertProductCategory = "Product.InsertProductCategory.graphql";
 			public static string AlterProductLotQuantity = "Product.AlterProductLotQuantity.graphql";
+			public static string InsertClientOrderItem = "Order.InsertClientOrderItem.graphql";
+			public static string UpdateClientOrderItem_SetClientOrder = "Order.UpdateClientOrderItem_SetClientOrder.graphql";
+			public static string InsertOrderClient = "Order.InsertClientOrder.graphql";
+			public static string UpdateUser_SetStore = "User.UpdateUser_SetStore.graphql";
 
 		}
 

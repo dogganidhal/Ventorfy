@@ -10,9 +10,9 @@ namespace Ventorfy.DataAccess.Model.Orders
 	public abstract class Order
 	{
 		
-		public int Id { get; set; }
+		public Guid Id { get; set; }
 		public DateTime Date { get; set; }
-		public IEnumerable<OrderItem> Items { get; set; }
+		public ICollection<OrderItem> Items { get; set; }
 		public User Author { get; set; }
 
 		public double ComputePrice()

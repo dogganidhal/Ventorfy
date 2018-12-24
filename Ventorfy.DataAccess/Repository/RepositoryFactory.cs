@@ -2,6 +2,7 @@
 using GraphQL.Client;
 using Ventorfy.DataAccess.GraphQL;
 using Ventorfy.DataAccess.Repository.Inventory;
+using Ventorfy.DataAccess.Repository.Orders;
 using Ventorfy.DataAccess.Repository.Products;
 using Ventorfy.DataAccess.Repository.Users;
 
@@ -28,6 +29,12 @@ namespace Ventorfy.DataAccess.Repository
 		{
 			// TODO: Check network health, then decide which Implementor of IProductRepository to instantiate
 			get => new ProductRepository(GraphQLUtils.CreateGraphQlClient());
+		}
+		
+		public IClientOrderRepository ClientOrderRepository
+		{
+			// TODO: Check network health, then decide which Implementor of IProductRepository to instantiate
+			get => new ClientOrderRepository(GraphQLUtils.CreateGraphQlClient());
 		}
 
 		private RepositoryFactory()

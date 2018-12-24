@@ -98,5 +98,53 @@ namespace Ventorfy.Tests.Repositories
 
 		}
 		
+		[Fact]
+		public async void CreateProduct_CreatesEmptyProductLot()
+		{
+			var createAdminRequest = GraphQLMutationManager.GetMutationRequest(
+				GraphQLMutationManager.MutationRequest.InsertUser, 
+				new
+				{
+					UserName = Guid.NewGuid().ToString(),
+					FullName = Guid.NewGuid().ToString(),
+					PasswordHash = SecurePasswordHasher.Hash(Guid.NewGuid().ToString())
+				});
+			var createAdminResponse = await this._Client.PostAsync(createAdminRequest);
+			var admin = createAdminResponse.GetDataFieldAs<InsertResult<User>>("insert_User").Result.First();
+
+			var createStoreRequest = GraphQLMutationManager.GetMutationRequest(
+				GraphQLMutationManager.MutationRequest.InsertStore, new
+				{
+					AdminId = admin.Id, 
+					Name = Guid.NewGuid().ToString()
+				});
+			var createStoreResponse = await this._Client.PostAsync(createStoreRequest);
+			var store = createStoreResponse.GetDataFieldAs<InsertResult<Store>>("insert_Store").Result.First();
+
+			var productCategory = await this._Repository.CreateProductCategory("TestProduct");
+			var product = await this._Repository.CreateProduct(store, Guid.NewGuid().ToString(), productCategory, 10.00);
+			
+			Assert.NotNull(product?.Id);
+			Assert.NotNull(product?.ProductLot);
+
+			var getProductLotRequest = GraphQLQueryManager.GetQueryRequest(GraphQLQueryManager.QueryRequest.GetProductLotByProductId,
+				new
+				{
+					ProductId = product.Id
+				});
+
+			var getProductLotResponse = await this._Client.PostAsync(getProductLotRequest);
+			var getProductLotResult = getProductLotResponse.GetDataFieldAs<ICollection<ProductLot>>("ProductLot");
+			
+			Assert.Equal(getProductLotResult.Count, 1);
+
+			var productLot = getProductLotResult.First();
+			
+			Assert.NotNull(productLot);
+			Assert.Equal(productLot.Id, product.ProductLot.Id);
+			Assert.Equal(productLot.Quantity, 0);
+
+		}
+		
 	}
 }

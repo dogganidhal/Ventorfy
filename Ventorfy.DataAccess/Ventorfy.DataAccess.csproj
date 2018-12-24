@@ -15,6 +15,7 @@
 
     <ItemGroup>
       <None Remove="GraphQL\Queries\GetUserByUserName.graphql" />
+      <EmbeddedResource Include="GraphQL\Mutations\Order\InsertClientOrderItem.graphql" />
       <EmbeddedResource Include="GraphQL\Mutations\Store\InsertStore.graphql" />
       <EmbeddedResource Include="GraphQL\Mutations\User\InsertUser.graphql">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -40,6 +41,19 @@
       <EmbeddedResource Include="GraphQL\Mutations\Product\UpdateProduct_SetProvider.graphql" />
       <None Remove="GraphQL\Mutations\Product\InsertProductCategory.graphql" />
       <EmbeddedResource Include="GraphQL\Mutations\Product\InsertProductCategory.graphql" />
+      <None Remove="GraphQL\Queries\Product\GetProductLotByProductId.graphql" />
+      <EmbeddedResource Include="GraphQL\Queries\Product\GetProductLotByProductId.graphql" />
+      <None Remove="GraphQL\Mutations\Product\InsertOrderItem.graphql" />
+      <None Remove="GraphQL\Queries\Order\GetClientOrdersForStore.graphql" />
+      <EmbeddedResource Include="GraphQL\Queries\Order\GetClientOrdersForStore.graphql" />
+      <None Remove="GraphQL\Mutations\Order\InsertClientOrder.graphql" />
+      <EmbeddedResource Include="GraphQL\Mutations\Order\InsertClientOrder.graphql">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <None Remove="GraphQL\Mutations\Order\UpdateClientOrderItem_SetClientOrder.graphql" />
+      <EmbeddedResource Include="GraphQL\Mutations\Order\UpdateClientOrderItem_SetClientOrder.graphql" />
+      <None Remove="GraphQL\Mutations\User\UpdateUser_SetStore.graphql" />
+      <EmbeddedResource Include="GraphQL\Mutations\User\UpdateUser_SetStore.graphql" />
     </ItemGroup>
 
     <ItemGroup>

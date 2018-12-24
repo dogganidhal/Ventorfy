@@ -8,9 +8,19 @@ namespace Ventorfy.DataAccess.Model.Orders
 	public class OrderItem
 	{
 		
-		public int Id { get; set; }
+		public Guid Id { get; set; }
 		public Product Product { get; set; }
 		public int Count { get; set; }
 
+		public OrderItem()
+		{
+			
+		}
+
+		public OrderItem(Product product, int count)
+		{
+			this.Product = product;
+			this.Count = count;
+		}
 	}
 }

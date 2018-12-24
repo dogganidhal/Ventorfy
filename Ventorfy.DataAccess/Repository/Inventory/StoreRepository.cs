@@ -28,8 +28,19 @@ namespace Ventorfy.DataAccess.Repository.Inventory
 				});
 			var response = await this._Client.PostAsync(request);
 			var insertResult = response.GetDataFieldAs<InsertResult<Store>>("insert_Store");
+			var store = insertResult.Result.First();
 
-			return insertResult.Result.First();
+			var updateUserRequest = GraphQLMutationManager.GetMutationRequest(
+				GraphQLMutationManager.MutationRequest.UpdateUser_SetStore, new
+				{
+					Id = admin.Id,
+					StoreId = store.Id
+				});
+			
+			// No need to await the result
+			await this._Client.PostAsync(updateUserRequest); 
+
+			return store;
 
 		}
 

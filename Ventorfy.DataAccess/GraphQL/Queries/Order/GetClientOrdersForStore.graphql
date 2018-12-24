@@ -1,0 +1,36 @@
+query GetClientOrdersForStore($storeId: ID!) {
+  ClientOrder(where: {
+    Author: {
+      Store: {
+        Id: {
+          _eq: $storeId
+        }
+      }
+    }
+  }) {
+    Id
+    Date
+    Author {
+      Id
+      FullName
+      UserName
+      Store {
+        Id
+        Name
+      }
+    }
+    ClientOrderItems {
+      Id
+      Count
+      Product {
+        Id
+        Name
+        Reference
+        ProductLot {
+          Id
+          Quantity
+        }
+      }
+    }
+  }
+}

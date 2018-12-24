@@ -15,6 +15,8 @@ namespace Ventorfy.DataAccess.GraphQL.Queries
 			public static string GetStoreById = "Store.GetStoreById.graphql";
 			public static string GetProductById = "Product.GetProductById.graphql";
 			public static string GetProductCategoryById = "Product.GetProductCategoryById.graphql";
+			public static string GetProductLotByProductId = "Product.GetProductLotByProductId.graphql";
+			public static string GetClientOrderForStore = "Order.GetClientOrderForStore.graphql";
 
 		}
 

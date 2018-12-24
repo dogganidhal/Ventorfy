@@ -1,0 +1,37 @@
+mutation InsertClientOrderItem($productId: ID!, $count: Int!) {
+  insert_ClientOrderItem(
+    objects: [
+      {ProductId: $productId, Count: $count}
+    ]
+  )
+  {
+    returning {
+      Id
+      Count
+      Product {
+        Id
+        Name
+        Reference
+        Provider {
+          Id
+          Name
+          Products {
+            Id
+            Name
+            Reference
+            Price
+          }
+        }
+        Price
+        ProductLot {
+          Id
+          Quantity
+          Store {
+            Id
+            Name
+          }
+        }
+      }
+    }
+  }
+}

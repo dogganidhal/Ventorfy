@@ -1,0 +1,20 @@
+mutation UpdateUser_SetStore($id: ID!, $storeId: ID!) {
+  update_User(_set: {
+    StoreId: $storeId
+  }, where: {
+    Id: {
+      _eq: $id
+    }
+  })
+  {
+    returning {
+      Id
+      UserName
+      FullName
+      Store {
+        Id
+        Name
+      }
+    }
+  }
+}

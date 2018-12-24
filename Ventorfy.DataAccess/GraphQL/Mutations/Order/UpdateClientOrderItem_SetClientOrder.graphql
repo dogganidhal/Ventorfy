@@ -1,0 +1,47 @@
+mutation UpdateClientOrderItem_SetClientOrder($id: ID!, $clientOrderId: ID!) {
+  update_ClientOrderItem(_set: {
+    ClientOrderId: $clientOrderId
+  }, where: {
+    Id: {
+      _eq: $id
+    }})
+  {
+    returning {
+      Id
+      Count
+      ClientOrder {
+        Id
+        Date
+        Author {
+          Id
+          FullName
+          UserName
+        }
+      }
+      Product {
+        Id
+        Name
+        Reference
+        Provider {
+          Id
+          Name
+          Products {
+            Id
+            Name
+            Reference
+            Price
+          }
+        }
+        Price
+        ProductLot {
+          Id
+          Quantity
+          Store {
+            Id
+            Name
+          }
+        }
+      }
+    }
+  }
+}
