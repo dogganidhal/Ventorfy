@@ -27,7 +27,7 @@ namespace Ventorfy.UserInterface.Auth
 				this._View.HideLoginProgressBar();
 				this._View.LaunchDashboardForm();
 			} 
-			catch (AccountNotFoundException e)
+			catch (Exception e)
 			{
 				this._View.HideLoginProgressBar();
 				this._View.DisplayError(e.Message);
