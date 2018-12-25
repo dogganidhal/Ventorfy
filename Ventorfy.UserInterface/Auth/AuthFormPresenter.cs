@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Ventorfy.Common.Exceptions;
 using Ventorfy.DataAccess.Repository.Users;
-using Ventorfy.UserInterface.Auth;
 using Ventorfy.UserInterface.Session;
-using Ventorfy.UserInterface.View;
 
-namespace Ventorfy.UserInterface.Presenter
+namespace Ventorfy.UserInterface.Auth
 {
 	public class AuthFormPresenter : IAuthFormPresenter
 	{
@@ -31,6 +25,7 @@ namespace Ventorfy.UserInterface.Presenter
 				var user = await this._UserRepository.Login(userName, passsword);
 				UserSession.Instance.CurrentUser = user;
 				this._View.HideLoginProgressBar();
+				this._View.LaunchDashboardForm();
 			} 
 			catch (AccountNotFoundException e)
 			{
@@ -49,6 +44,7 @@ namespace Ventorfy.UserInterface.Presenter
 				var user = await this._UserRepository.CreateUser(userName, password, fullName);
 				UserSession.Instance.CurrentUser = user;
 				this._View.HideSignUpProgressBar();
+				this._View.LaunchDashboardForm();
 			}
 			catch (Exception e)
 			{
@@ -59,7 +55,7 @@ namespace Ventorfy.UserInterface.Presenter
 
 		}
 
-		public void SetView(AuthForm view)
+		public void SetView(IAuthFormView view)
 		{
 			this._View = view;
 		}

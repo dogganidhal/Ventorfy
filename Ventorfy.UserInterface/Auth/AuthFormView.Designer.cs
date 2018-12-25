@@ -1,6 +1,6 @@
-﻿namespace Ventorfy.UserInterface.View
+﻿namespace Ventorfy.UserInterface.Auth
 {
-	partial class AuthForm
+	partial class AuthFormView
 	{
 		/// <summary>
 		/// Required designer variable.

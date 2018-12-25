@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Ventorfy.DataAccess.Repository;
 using Ventorfy.DataAccess.Repository.Users;
-using Ventorfy.UserInterface.View;
+using Ventorfy.UserInterface.Auth;
 
 namespace Ventorfy.UserInterface
 {
@@ -19,7 +19,7 @@ namespace Ventorfy.UserInterface
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new AuthForm());
+			Application.Run(new AuthFormView());
 		}
 	}
 }

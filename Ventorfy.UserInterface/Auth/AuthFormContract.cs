@@ -1,5 +1,4 @@
 ﻿using Ventorfy.UserInterface.MVP;
-using Ventorfy.UserInterface.View;
 
 namespace Ventorfy.UserInterface.Auth
 {
@@ -15,7 +14,7 @@ namespace Ventorfy.UserInterface.Auth
 		
 	}
 
-	public interface IAuthFormPresenter : IPresenter<AuthForm> 
+	public interface IAuthFormPresenter : IPresenter<IAuthFormView> 
 	{
 
 		void OnLoginButtonPressed(string userName, string passsword);

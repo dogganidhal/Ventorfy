@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
 using Ventorfy.DataAccess.Repository;
-using Ventorfy.UserInterface.Auth;
-using Ventorfy.UserInterface.Presenter;
+using Ventorfy.UserInterface.Dashboard;
 
-namespace Ventorfy.UserInterface.View
+namespace Ventorfy.UserInterface.Auth
 {
-	public partial class AuthForm : Form, IAuthFormView
+	public partial class AuthFormView : Form, IAuthFormView
 	{
 
 		private IAuthFormPresenter _Presenter;
 
-		public AuthForm()
+		public AuthFormView()
 		{
 			this.InitializeComponent();
 			this.CreatePresenter();
@@ -55,7 +54,9 @@ namespace Ventorfy.UserInterface.View
 
 		public void LaunchDashboardForm()
 		{
-			throw new NotImplementedException();
+			var mainMenuForm = new DashboardFormView();
+			mainMenuForm.Show();
+			this.Visible = false;
 		}
 
 		private void _SetupView()
