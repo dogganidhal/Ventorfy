@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Ventorfy.DataAccess.Model.Products;
 using Ventorfy.UserInterface.MVP;
 
 namespace Ventorfy.UserInterface.Dashboard.Checkout
@@ -11,6 +8,8 @@ namespace Ventorfy.UserInterface.Dashboard.Checkout
 	{
 
 		void LaunchSelectOrderItemDialog();
+		void SetTotalPrice(double totalPrice);
+		void SetTotalItems(int items);
 
 	}
 
@@ -18,6 +17,7 @@ namespace Ventorfy.UserInterface.Dashboard.Checkout
 	{
 
 		void OnAddOrderItemButtonClicked();
+		void OnOrderItemAdded(Product product, int count);
 
 	}
 }

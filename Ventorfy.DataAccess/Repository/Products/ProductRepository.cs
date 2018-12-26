@@ -118,5 +118,17 @@ namespace Ventorfy.DataAccess.Repository.Products
 
 			return products.First();
 		}
+
+		public async Task<ICollection<Product>> GetProductsByStoreId(Guid storeId)
+		{
+
+			var request = GraphQLQueryManager.GetQueryRequest(GraphQLQueryManager.QueryRequest.GetProductsByStoreId, new
+			{
+				StoreId = storeId
+			});
+			var response = await this._Client.PostAsync(request);
+			return response.GetDataFieldAs<ICollection<Product>>("Product");
+
+		}
 	}
 }

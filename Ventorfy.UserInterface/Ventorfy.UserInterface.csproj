@@ -82,6 +82,7 @@
     <Compile Include="Dashboard\AddOrderItem\AddOrderItemFormView.Designer.cs">
       <DependentUpon>AddOrderItemFormView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\AddOrderItem\AddOrderItemPresenter.cs" />
     <Compile Include="Dashboard\Checkout\CheckoutFormContract.cs" />
     <Compile Include="Dashboard\Checkout\CheckoutFormPresenter.cs" />
     <Compile Include="Dashboard\Checkout\CheckoutFormView.cs">

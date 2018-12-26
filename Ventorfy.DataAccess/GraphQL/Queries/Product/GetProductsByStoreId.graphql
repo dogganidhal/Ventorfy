@@ -1,0 +1,27 @@
+﻿query GetProductsForStore($storeId: ID!) {
+  Product(where: {
+    ProductLot: {
+      StoreId: {
+        _eq: $storeId
+      }
+    }
+  })
+  {
+    Id
+    Name
+    Reference
+    Price
+    Provider {
+      Id
+      Name
+    }
+    ProductLot {
+      Id
+      Quantity
+      Store {
+        Id
+        Name
+      }
+    }
+  }
+}

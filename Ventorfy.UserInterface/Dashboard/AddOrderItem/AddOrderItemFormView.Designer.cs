@@ -29,11 +29,11 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddOrderItemFormView));
-			Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+			Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
 			this.ProductsListBox = new System.Windows.Forms.ListBox();
 			this.ProductGroupBox = new System.Windows.Forms.GroupBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.StoreNameTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+			this.ItemCountTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
 			this.OkButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
 			this.ProductGroupBox.SuspendLayout();
 			this.groupBox1.SuspendLayout();
@@ -44,11 +44,16 @@
 			this.ProductsListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
 			this.ProductsListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.ProductsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.ProductsListBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ProductsListBox.ForeColor = System.Drawing.Color.WhiteSmoke;
 			this.ProductsListBox.FormattingEnabled = true;
-			this.ProductsListBox.ItemHeight = 25;
+			this.ProductsListBox.ItemHeight = 21;
+			this.ProductsListBox.Items.AddRange(new object[] {
+            "QOIEQBOIUQ00BR1083140EIEQP (Another Test Product)",
+            "AEOFQ91308QEIFb (Test Product)"});
 			this.ProductsListBox.Location = new System.Drawing.Point(3, 29);
 			this.ProductsListBox.Name = "ProductsListBox";
+			this.ProductsListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
 			this.ProductsListBox.Size = new System.Drawing.Size(433, 185);
 			this.ProductsListBox.TabIndex = 0;
 			// 
@@ -66,7 +71,7 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.StoreNameTextBox);
+			this.groupBox1.Controls.Add(this.ItemCountTextBox);
 			this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
 			this.groupBox1.Location = new System.Drawing.Point(30, 260);
@@ -76,28 +81,28 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Set Count";
 			// 
-			// StoreNameTextBox
+			// ItemCountTextBox
 			// 
-			this.StoreNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-			this.StoreNameTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-			this.StoreNameTextBox.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-			this.StoreNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.StoreNameTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.StoreNameTextBox.ForeColor = System.Drawing.Color.Silver;
-			this.StoreNameTextBox.HintForeColor = System.Drawing.Color.Gainsboro;
-			this.StoreNameTextBox.HintText = "Count";
-			this.StoreNameTextBox.isPassword = false;
-			this.StoreNameTextBox.LineFocusedColor = System.Drawing.Color.WhiteSmoke;
-			this.StoreNameTextBox.LineIdleColor = System.Drawing.Color.WhiteSmoke;
-			this.StoreNameTextBox.LineMouseHoverColor = System.Drawing.Color.WhiteSmoke;
-			this.StoreNameTextBox.LineThickness = 4;
-			this.StoreNameTextBox.Location = new System.Drawing.Point(42, 49);
-			this.StoreNameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.StoreNameTextBox.MaxLength = 32767;
-			this.StoreNameTextBox.Name = "StoreNameTextBox";
-			this.StoreNameTextBox.Size = new System.Drawing.Size(353, 43);
-			this.StoreNameTextBox.TabIndex = 2;
-			this.StoreNameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+			this.ItemCountTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+			this.ItemCountTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+			this.ItemCountTextBox.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.ItemCountTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.ItemCountTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ItemCountTextBox.ForeColor = System.Drawing.Color.Silver;
+			this.ItemCountTextBox.HintForeColor = System.Drawing.Color.Gainsboro;
+			this.ItemCountTextBox.HintText = "Count";
+			this.ItemCountTextBox.isPassword = false;
+			this.ItemCountTextBox.LineFocusedColor = System.Drawing.Color.WhiteSmoke;
+			this.ItemCountTextBox.LineIdleColor = System.Drawing.Color.WhiteSmoke;
+			this.ItemCountTextBox.LineMouseHoverColor = System.Drawing.Color.WhiteSmoke;
+			this.ItemCountTextBox.LineThickness = 4;
+			this.ItemCountTextBox.Location = new System.Drawing.Point(42, 49);
+			this.ItemCountTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.ItemCountTextBox.MaxLength = 32767;
+			this.ItemCountTextBox.Name = "ItemCountTextBox";
+			this.ItemCountTextBox.Size = new System.Drawing.Size(353, 43);
+			this.ItemCountTextBox.TabIndex = 2;
+			this.ItemCountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			// 
 			// OkButton
 			// 
@@ -121,13 +126,13 @@
 			this.OkButton.IdleIconRightImage = null;
 			this.OkButton.Location = new System.Drawing.Point(137, 407);
 			this.OkButton.Name = "OkButton";
-			stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-			stateProperties1.BorderRadius = 1;
-			stateProperties1.BorderThickness = 1;
-			stateProperties1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-			stateProperties1.IconLeftImage = null;
-			stateProperties1.IconRightImage = null;
-			this.OkButton.onHoverState = stateProperties1;
+			stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+			stateProperties5.BorderRadius = 1;
+			stateProperties5.BorderThickness = 1;
+			stateProperties5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+			stateProperties5.IconLeftImage = null;
+			stateProperties5.IconRightImage = null;
+			this.OkButton.onHoverState = stateProperties5;
 			this.OkButton.Size = new System.Drawing.Size(210, 45);
 			this.OkButton.TabIndex = 23;
 			this.OkButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -136,7 +141,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
 			this.ClientSize = new System.Drawing.Size(504, 477);
 			this.Controls.Add(this.OkButton);
 			this.Controls.Add(this.groupBox1);
@@ -156,7 +161,7 @@
 		private System.Windows.Forms.ListBox ProductsListBox;
 		private System.Windows.Forms.GroupBox ProductGroupBox;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private Bunifu.Framework.UI.BunifuMaterialTextbox StoreNameTextBox;
+		private Bunifu.Framework.UI.BunifuMaterialTextbox ItemCountTextBox;
 		private Bunifu.UI.WinForms.BunifuButton.BunifuButton OkButton;
 	}
 }

@@ -15,11 +15,13 @@
 
     <ItemGroup>
       <None Remove="GraphQL\Queries\GetUserByUserName.graphql" />
+      <None Remove="GraphQL\Queries\Product\GetProductsByStoreId.graphql" />
       <EmbeddedResource Include="GraphQL\Mutations\Order\InsertClientOrderItem.graphql" />
       <EmbeddedResource Include="GraphQL\Mutations\Store\InsertStore.graphql" />
       <EmbeddedResource Include="GraphQL\Mutations\User\InsertUser.graphql">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </EmbeddedResource>
+      <EmbeddedResource Include="GraphQL\Queries\Product\GetProductsByStoreId.graphql" />
       <EmbeddedResource Include="GraphQL\Queries\User\GetUserByUserName.graphql" />
       <None Remove="GraphQL\Queries\Product\GetProductById.graphql" />
       <EmbeddedResource Include="GraphQL\Queries\Product\GetProductById.graphql" />

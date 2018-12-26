@@ -30,14 +30,14 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckoutFormView));
 			this.OrderItemsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+			this.label4 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
 			this.AddOrderItemButton = new Bunifu.Framework.UI.BunifuTileButton();
 			this.OrderItemTotalLabel = new System.Windows.Forms.Label();
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.TotalPriceLabel = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
 			this.OrderItemsTableLayoutPanel.SuspendLayout();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
@@ -60,6 +60,58 @@
 			this.OrderItemsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.OrderItemsTableLayoutPanel.Size = new System.Drawing.Size(800, 64);
 			this.OrderItemsTableLayoutPanel.TabIndex = 0;
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+			this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.label4.Location = new System.Drawing.Point(403, 0);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(194, 25);
+			this.label4.TabIndex = 7;
+			this.label4.Text = "Count";
+			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+			this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.label3.Location = new System.Drawing.Point(603, 0);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(194, 25);
+			this.label3.TabIndex = 6;
+			this.label3.Text = "Unit price";
+			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.label1.Location = new System.Drawing.Point(3, 0);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(194, 25);
+			this.label1.TabIndex = 5;
+			this.label1.Text = "Product name";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+			this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.label2.Location = new System.Drawing.Point(203, 0);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(194, 25);
+			this.label2.TabIndex = 4;
+			this.label2.Text = "Reference";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// AddOrderItemButton
 			// 
@@ -88,9 +140,9 @@
 			this.OrderItemTotalLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
 			this.OrderItemTotalLabel.Location = new System.Drawing.Point(143, 0);
 			this.OrderItemTotalLabel.Name = "OrderItemTotalLabel";
-			this.OrderItemTotalLabel.Size = new System.Drawing.Size(189, 141);
+			this.OrderItemTotalLabel.Size = new System.Drawing.Size(178, 141);
 			this.OrderItemTotalLabel.TabIndex = 2;
-			this.OrderItemTotalLabel.Text = "TOTAL ARTICLES : 23";
+			this.OrderItemTotalLabel.Text = "TOTAL ARTICLES : 0";
 			this.OrderItemTotalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// flowLayoutPanel1
@@ -110,64 +162,12 @@
 			this.TotalPriceLabel.Dock = System.Windows.Forms.DockStyle.Right;
 			this.TotalPriceLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.TotalPriceLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.TotalPriceLabel.Location = new System.Drawing.Point(338, 0);
+			this.TotalPriceLabel.Location = new System.Drawing.Point(327, 0);
 			this.TotalPriceLabel.Name = "TotalPriceLabel";
-			this.TotalPriceLabel.Size = new System.Drawing.Size(169, 141);
+			this.TotalPriceLabel.Size = new System.Drawing.Size(158, 141);
 			this.TotalPriceLabel.TabIndex = 3;
-			this.TotalPriceLabel.Text = "TOTAL PRICE : 99$";
+			this.TotalPriceLabel.Text = "TOTAL PRICE : 0$";
 			this.TotalPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.label2.Location = new System.Drawing.Point(203, 0);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(194, 25);
-			this.label2.TabIndex = 4;
-			this.label2.Text = "Reference";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.label1.Location = new System.Drawing.Point(3, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(194, 25);
-			this.label1.TabIndex = 5;
-			this.label1.Text = "Product name";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-			this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.label3.Location = new System.Drawing.Point(603, 0);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(194, 25);
-			this.label3.TabIndex = 6;
-			this.label3.Text = "Unit price";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-			this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.label4.Location = new System.Drawing.Point(403, 0);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(194, 25);
-			this.label4.TabIndex = 7;
-			this.label4.Text = "Count";
-			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// CheckoutFormView
 			// 

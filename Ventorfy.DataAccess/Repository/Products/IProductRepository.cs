@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Ventorfy.DataAccess.Model.Inventory;
 using Ventorfy.DataAccess.Model.Products;
@@ -17,6 +18,7 @@ namespace Ventorfy.DataAccess.Repository.Products
 		Task<Product> GetProductById(Guid id);
 		Task<ProductLot> AlterQuantity(ProductLot productLot, AlterQuantityDelegate @delegate);
 		Task<Product> SetProvider(Product product, Guid providerName);
+		Task<ICollection<Product>> GetProductsByStoreId(Guid storeId);
 
 	}
 }
