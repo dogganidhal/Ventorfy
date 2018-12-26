@@ -29,8 +29,8 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthFormView));
-			Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-			Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+			Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+			Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
 			this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
 			this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
 			this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -44,7 +44,9 @@
 			this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
 			this.SignUpProgressBar = new Bunifu.UI.WinForms.BunifuCircleProgress();
 			this.LoginProgressBar = new Bunifu.UI.WinForms.BunifuCircleProgress();
+			this.CloseButton = new Bunifu.Framework.UI.BunifuImageButton();
 			((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// bunifuImageButton1
@@ -64,7 +66,7 @@
 			// bunifuSeparator1
 			// 
 			this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-			this.bunifuSeparator1.LineColor = System.Drawing.Color.WhiteSmoke;
+			this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
 			this.bunifuSeparator1.LineThickness = 1;
 			this.bunifuSeparator1.Location = new System.Drawing.Point(327, 184);
 			this.bunifuSeparator1.Name = "bunifuSeparator1";
@@ -175,13 +177,13 @@
 			this.SignUpButton.IdleIconRightImage = null;
 			this.SignUpButton.Location = new System.Drawing.Point(449, 465);
 			this.SignUpButton.Name = "SignUpButton";
-			stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-			stateProperties3.BorderRadius = 1;
-			stateProperties3.BorderThickness = 1;
-			stateProperties3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-			stateProperties3.IconLeftImage = null;
-			stateProperties3.IconRightImage = null;
-			this.SignUpButton.onHoverState = stateProperties3;
+			stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+			stateProperties1.BorderRadius = 1;
+			stateProperties1.BorderThickness = 1;
+			stateProperties1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+			stateProperties1.IconLeftImage = null;
+			stateProperties1.IconRightImage = null;
+			this.SignUpButton.onHoverState = stateProperties1;
 			this.SignUpButton.Size = new System.Drawing.Size(210, 45);
 			this.SignUpButton.TabIndex = 18;
 			this.SignUpButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -208,13 +210,13 @@
 			this.LoginButton.IdleIconRightImage = null;
 			this.LoginButton.Location = new System.Drawing.Point(77, 465);
 			this.LoginButton.Name = "LoginButton";
-			stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-			stateProperties4.BorderRadius = 1;
-			stateProperties4.BorderThickness = 1;
-			stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-			stateProperties4.IconLeftImage = null;
-			stateProperties4.IconRightImage = null;
-			this.LoginButton.onHoverState = stateProperties4;
+			stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+			stateProperties2.BorderRadius = 1;
+			stateProperties2.BorderThickness = 1;
+			stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+			stateProperties2.IconLeftImage = null;
+			stateProperties2.IconRightImage = null;
+			this.LoginButton.onHoverState = stateProperties2;
 			this.LoginButton.Size = new System.Drawing.Size(210, 45);
 			this.LoginButton.TabIndex = 22;
 			this.LoginButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -336,12 +338,27 @@
 			this.LoginProgressBar.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
 			this.LoginProgressBar.Visible = false;
 			// 
+			// CloseButton
+			// 
+			this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.Image")));
+			this.CloseButton.ImageActive = null;
+			this.CloseButton.Location = new System.Drawing.Point(684, 12);
+			this.CloseButton.Name = "CloseButton";
+			this.CloseButton.Size = new System.Drawing.Size(36, 30);
+			this.CloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.CloseButton.TabIndex = 24;
+			this.CloseButton.TabStop = false;
+			this.CloseButton.Zoom = 10;
+			// 
 			// AuthFormView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
 			this.ClientSize = new System.Drawing.Size(732, 579);
+			this.Controls.Add(this.CloseButton);
 			this.Controls.Add(this.LoginProgressBar);
 			this.Controls.Add(this.SignUpProgressBar);
 			this.Controls.Add(this.LoginButton);
@@ -360,6 +377,7 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Authentication";
 			((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -379,5 +397,6 @@
 		private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
 		private Bunifu.UI.WinForms.BunifuCircleProgress SignUpProgressBar;
 		private Bunifu.UI.WinForms.BunifuCircleProgress LoginProgressBar;
+		private Bunifu.Framework.UI.BunifuImageButton CloseButton;
 	}
 }

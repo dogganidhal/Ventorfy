@@ -46,6 +46,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
       <HintPath>..\..\..\..\Downloads\Bunifu UI WinForms 1.8.0.1\Bunifu UI WinForms 1.8.0.1\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>..\..\..\..\Downloads\Bunifu UI WinForms 1.8.0.1\Bunifu UI WinForms 1.8.0.1\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
       <HintPath>..\..\..\..\Downloads\Bunifu UI WinForms 1.8.0.1\Bunifu UI WinForms 1.8.0.1\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
     </Reference>
@@ -58,6 +61,7 @@
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,6 +75,29 @@
   <ItemGroup>
     <Compile Include="Auth\AuthFormContract.cs" />
     <Compile Include="Auth\AuthFormPresenter.cs" />
+    <Compile Include="Dashboard\AddOrderItem\AddOrderItemFormContract.cs" />
+    <Compile Include="Dashboard\AddOrderItem\AddOrderItemFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\AddOrderItem\AddOrderItemFormView.Designer.cs">
+      <DependentUpon>AddOrderItemFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Checkout\CheckoutFormContract.cs" />
+    <Compile Include="Dashboard\Checkout\CheckoutFormPresenter.cs" />
+    <Compile Include="Dashboard\Checkout\CheckoutFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Checkout\CheckoutFormView.Designer.cs">
+      <DependentUpon>CheckoutFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\CreateStore\CreateStoreFormContract.cs" />
+    <Compile Include="Dashboard\CreateStore\CreateStoreFormPresenter.cs" />
+    <Compile Include="Dashboard\CreateStore\CreateStoreFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\CreateStore\CreateStoreFormView.Designer.cs">
+      <DependentUpon>CreateStoreFormView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\DashboardFormView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +106,14 @@
     </Compile>
     <Compile Include="Dashboard\DashboardFormContract.cs" />
     <Compile Include="Dashboard\DashboardFormPresenter.cs" />
+    <Compile Include="Dashboard\Overview\OverviewFormContract.cs" />
+    <Compile Include="Dashboard\Overview\OverviewFormPresenter.cs" />
+    <Compile Include="Dashboard\Overview\OverviewFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Overview\OverviewFormView.Designer.cs">
+      <DependentUpon>OverviewFormView.cs</DependentUpon>
+    </Compile>
     <Compile Include="MVP\IPresenter.cs" />
     <Compile Include="MVP\IView.cs" />
     <Compile Include="Program.cs" />
@@ -90,8 +125,20 @@
       <DependentUpon>AuthFormView.cs</DependentUpon>
     </Compile>
     <Compile Include="Session\UserSession.cs" />
+    <EmbeddedResource Include="Dashboard\AddOrderItem\AddOrderItemFormView.resx">
+      <DependentUpon>AddOrderItemFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Checkout\CheckoutFormView.resx">
+      <DependentUpon>CheckoutFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\CreateStore\CreateStoreFormView.resx">
+      <DependentUpon>CreateStoreFormView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\DashboardFormView.resx">
       <DependentUpon>DashboardFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Overview\OverviewFormView.resx">
+      <DependentUpon>OverviewFormView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

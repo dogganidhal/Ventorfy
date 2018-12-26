@@ -1,7 +1,9 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 using Ventorfy.UserInterface.Auth;
+using Ventorfy.UserInterface.Dashboard.Checkout;
+using Ventorfy.UserInterface.Dashboard.CreateStore;
+using Ventorfy.UserInterface.Dashboard.Overview;
 
 namespace Ventorfy.UserInterface.Dashboard
 {
@@ -9,6 +11,8 @@ namespace Ventorfy.UserInterface.Dashboard
 	{
 
 		private IDashboardFormPresenter _Presenter;
+		private OverviewFormView _OverviewFormView = new OverviewFormView();
+		private CheckoutFormView _CheckoutFormView = new CheckoutFormView(); 
 
 		public DashboardFormView()
 		{
@@ -21,6 +25,14 @@ namespace Ventorfy.UserInterface.Dashboard
 		{
 			this._Presenter = new DashboardFormPresenter();
 			this._Presenter.SetView(this);
+			this._Presenter.LoadData();
+		}
+
+		public void DisplayCreateStoreForm()
+		{
+			var storeFormView = new CreateStoreFormView();
+			storeFormView.Show();
+			storeFormView.BringToFront();
 		}
 
 		public void DisplayLogOutConfirmationDialog()
@@ -36,12 +48,60 @@ namespace Ventorfy.UserInterface.Dashboard
 		{
 			var authFormView = new AuthFormView();
 			authFormView.Show();
-			this.Visible = false;
+			this.Close();
+		}
+
+		public void SetCheckoutFormSelected()
+		{
+			this._CheckoutFormView.Show();
+			this._CheckoutFormView.BringToFront();
+		}
+
+		public void SetOverviewFormSelected()
+		{
+			this._OverviewFormView.Show();
+			this._OverviewFormView.BringToFront();
+		}
+
+		public void SetInventoryFormSelected()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void SetOrderFormSelected()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void SetStoreName(string storeName)
+		{
+			this.StoreNameLabel.Text = storeName;
+		}
+
+		public void SetUserFullName(string fullName)
+		{
+			this.UserFullNameLabel.Text = fullName;
 		}
 
 		private void _SetUpView()
 		{
 			
+			this._CheckoutFormView.TopLevel = false;
+			this._CheckoutFormView.Dock = DockStyle.Fill;
+			this.ContainerPanel.Controls.Add(this._CheckoutFormView);
+
+			this._OverviewFormView.TopLevel = false;
+			this._OverviewFormView.Dock = DockStyle.Fill;
+			this.ContainerPanel.Controls.Add(this._OverviewFormView);
+
+			this.LogOutButton.Click += (object @object, EventArgs args) =>
+			{
+				this._Presenter.OnLogOutButtonClicked();
+			};
+			this.CheckoutButton.Click += (object @object, EventArgs args) =>
+			{
+				this._Presenter.OnCheckoutButtonClicked();
+			};
 		}
 	}
 }

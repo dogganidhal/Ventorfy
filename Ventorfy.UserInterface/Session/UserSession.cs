@@ -5,15 +5,24 @@ namespace Ventorfy.UserInterface.Session
 	public class UserSession
 	{
 
-		public static UserSession Instance { get => new UserSession(); }
+		public static UserSession Instance { get; } = new UserSession();
 
-		public User CurrentUser { get; set; }
+		private User _CurrentUser;
 
 		private UserSession()
 		{
 
 		}
 
+		public void SetCurrentUser(User user)
+		{
+			this._CurrentUser = user;
+		}
+
+		public User GetCurrentUser()
+		{
+			return this._CurrentUser;
+		}
 
 	}
 }

@@ -30,28 +30,30 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardFormView));
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+			this.OrdersButton = new Bunifu.Framework.UI.BunifuFlatButton();
+			this.InventoryButton = new Bunifu.Framework.UI.BunifuFlatButton();
+			this.CheckoutButton = new Bunifu.Framework.UI.BunifuFlatButton();
 			this.DashboardButton = new Bunifu.Framework.UI.BunifuFlatButton();
-			this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-			this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
-			this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
+			this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-			this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
-			this.label1 = new System.Windows.Forms.Label();
+			this.UserFullNameLabel = new System.Windows.Forms.Label();
+			this.StoreNameLabel = new System.Windows.Forms.Label();
+			this.LogOutButton = new Bunifu.Framework.UI.BunifuImageButton();
+			this.CloseButton = new Bunifu.Framework.UI.BunifuImageButton();
+			this.ContainerPanel = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
 			this.panel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.LogOutButton)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-			this.panel1.Controls.Add(this.bunifuFlatButton3);
-			this.panel1.Controls.Add(this.bunifuFlatButton2);
-			this.panel1.Controls.Add(this.bunifuFlatButton1);
+			this.panel1.Controls.Add(this.OrdersButton);
+			this.panel1.Controls.Add(this.InventoryButton);
+			this.panel1.Controls.Add(this.CheckoutButton);
 			this.panel1.Controls.Add(this.DashboardButton);
 			this.panel1.Controls.Add(this.bunifuImageButton1);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -60,18 +62,110 @@
 			this.panel1.Size = new System.Drawing.Size(252, 722);
 			this.panel1.TabIndex = 0;
 			// 
-			// bunifuImageButton1
+			// OrdersButton
 			// 
-			this.bunifuImageButton1.Enabled = false;
-			this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-			this.bunifuImageButton1.ImageActive = null;
-			this.bunifuImageButton1.Location = new System.Drawing.Point(23, 12);
-			this.bunifuImageButton1.Name = "bunifuImageButton1";
-			this.bunifuImageButton1.Size = new System.Drawing.Size(200, 195);
-			this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.bunifuImageButton1.TabIndex = 0;
-			this.bunifuImageButton1.TabStop = false;
-			this.bunifuImageButton1.Zoom = 10;
+			this.OrdersButton.Active = false;
+			this.OrdersButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+			this.OrdersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+			this.OrdersButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.OrdersButton.BorderRadius = 0;
+			this.OrdersButton.ButtonText = "Orders";
+			this.OrdersButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.OrdersButton.DisabledColor = System.Drawing.Color.Gray;
+			this.OrdersButton.Iconcolor = System.Drawing.Color.Transparent;
+			this.OrdersButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("OrdersButton.Iconimage")));
+			this.OrdersButton.Iconimage_right = null;
+			this.OrdersButton.Iconimage_right_Selected = null;
+			this.OrdersButton.Iconimage_Selected = null;
+			this.OrdersButton.IconMarginLeft = 0;
+			this.OrdersButton.IconMarginRight = 0;
+			this.OrdersButton.IconRightVisible = false;
+			this.OrdersButton.IconRightZoom = 0D;
+			this.OrdersButton.IconVisible = true;
+			this.OrdersButton.IconZoom = 48D;
+			this.OrdersButton.IsTab = true;
+			this.OrdersButton.Location = new System.Drawing.Point(-3, 453);
+			this.OrdersButton.Name = "OrdersButton";
+			this.OrdersButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+			this.OrdersButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+			this.OrdersButton.OnHoverTextColor = System.Drawing.Color.White;
+			this.OrdersButton.selected = false;
+			this.OrdersButton.Size = new System.Drawing.Size(252, 65);
+			this.OrdersButton.TabIndex = 4;
+			this.OrdersButton.Text = "Orders";
+			this.OrdersButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.OrdersButton.Textcolor = System.Drawing.Color.White;
+			this.OrdersButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			// 
+			// InventoryButton
+			// 
+			this.InventoryButton.Active = false;
+			this.InventoryButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+			this.InventoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+			this.InventoryButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.InventoryButton.BorderRadius = 0;
+			this.InventoryButton.ButtonText = " Product Inventory";
+			this.InventoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.InventoryButton.DisabledColor = System.Drawing.Color.Gray;
+			this.InventoryButton.Iconcolor = System.Drawing.Color.Transparent;
+			this.InventoryButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("InventoryButton.Iconimage")));
+			this.InventoryButton.Iconimage_right = null;
+			this.InventoryButton.Iconimage_right_Selected = null;
+			this.InventoryButton.Iconimage_Selected = null;
+			this.InventoryButton.IconMarginLeft = 0;
+			this.InventoryButton.IconMarginRight = 0;
+			this.InventoryButton.IconRightVisible = false;
+			this.InventoryButton.IconRightZoom = 0D;
+			this.InventoryButton.IconVisible = true;
+			this.InventoryButton.IconZoom = 48D;
+			this.InventoryButton.IsTab = true;
+			this.InventoryButton.Location = new System.Drawing.Point(-3, 382);
+			this.InventoryButton.Name = "InventoryButton";
+			this.InventoryButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+			this.InventoryButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+			this.InventoryButton.OnHoverTextColor = System.Drawing.Color.White;
+			this.InventoryButton.selected = false;
+			this.InventoryButton.Size = new System.Drawing.Size(252, 65);
+			this.InventoryButton.TabIndex = 3;
+			this.InventoryButton.Text = " Product Inventory";
+			this.InventoryButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.InventoryButton.Textcolor = System.Drawing.Color.White;
+			this.InventoryButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			// 
+			// CheckoutButton
+			// 
+			this.CheckoutButton.Active = false;
+			this.CheckoutButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+			this.CheckoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+			this.CheckoutButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.CheckoutButton.BorderRadius = 0;
+			this.CheckoutButton.ButtonText = "Checkout";
+			this.CheckoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.CheckoutButton.DisabledColor = System.Drawing.Color.Gray;
+			this.CheckoutButton.Iconcolor = System.Drawing.Color.Transparent;
+			this.CheckoutButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("CheckoutButton.Iconimage")));
+			this.CheckoutButton.Iconimage_right = null;
+			this.CheckoutButton.Iconimage_right_Selected = null;
+			this.CheckoutButton.Iconimage_Selected = null;
+			this.CheckoutButton.IconMarginLeft = 0;
+			this.CheckoutButton.IconMarginRight = 0;
+			this.CheckoutButton.IconRightVisible = false;
+			this.CheckoutButton.IconRightZoom = 0D;
+			this.CheckoutButton.IconVisible = true;
+			this.CheckoutButton.IconZoom = 48D;
+			this.CheckoutButton.IsTab = true;
+			this.CheckoutButton.Location = new System.Drawing.Point(0, 311);
+			this.CheckoutButton.Name = "CheckoutButton";
+			this.CheckoutButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+			this.CheckoutButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+			this.CheckoutButton.OnHoverTextColor = System.Drawing.Color.White;
+			this.CheckoutButton.selected = false;
+			this.CheckoutButton.Size = new System.Drawing.Size(252, 65);
+			this.CheckoutButton.TabIndex = 2;
+			this.CheckoutButton.Text = "Checkout";
+			this.CheckoutButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.CheckoutButton.Textcolor = System.Drawing.Color.White;
+			this.CheckoutButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			// 
 			// DashboardButton
 			// 
@@ -108,170 +202,108 @@
 			this.DashboardButton.Textcolor = System.Drawing.Color.White;
 			this.DashboardButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			// 
-			// bunifuFlatButton1
+			// bunifuImageButton1
 			// 
-			this.bunifuFlatButton1.Active = false;
-			this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-			this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-			this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.bunifuFlatButton1.BorderRadius = 0;
-			this.bunifuFlatButton1.ButtonText = "Checkout";
-			this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-			this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-			this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
-			this.bunifuFlatButton1.Iconimage_right = null;
-			this.bunifuFlatButton1.Iconimage_right_Selected = null;
-			this.bunifuFlatButton1.Iconimage_Selected = null;
-			this.bunifuFlatButton1.IconMarginLeft = 0;
-			this.bunifuFlatButton1.IconMarginRight = 0;
-			this.bunifuFlatButton1.IconRightVisible = false;
-			this.bunifuFlatButton1.IconRightZoom = 0D;
-			this.bunifuFlatButton1.IconVisible = true;
-			this.bunifuFlatButton1.IconZoom = 48D;
-			this.bunifuFlatButton1.IsTab = true;
-			this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 311);
-			this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-			this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-			this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-			this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-			this.bunifuFlatButton1.selected = false;
-			this.bunifuFlatButton1.Size = new System.Drawing.Size(252, 65);
-			this.bunifuFlatButton1.TabIndex = 2;
-			this.bunifuFlatButton1.Text = "Checkout";
-			this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-			this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			// 
-			// bunifuFlatButton2
-			// 
-			this.bunifuFlatButton2.Active = false;
-			this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-			this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-			this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.bunifuFlatButton2.BorderRadius = 0;
-			this.bunifuFlatButton2.ButtonText = " Product Inventory";
-			this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-			this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
-			this.bunifuFlatButton2.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage")));
-			this.bunifuFlatButton2.Iconimage_right = null;
-			this.bunifuFlatButton2.Iconimage_right_Selected = null;
-			this.bunifuFlatButton2.Iconimage_Selected = null;
-			this.bunifuFlatButton2.IconMarginLeft = 0;
-			this.bunifuFlatButton2.IconMarginRight = 0;
-			this.bunifuFlatButton2.IconRightVisible = false;
-			this.bunifuFlatButton2.IconRightZoom = 0D;
-			this.bunifuFlatButton2.IconVisible = true;
-			this.bunifuFlatButton2.IconZoom = 48D;
-			this.bunifuFlatButton2.IsTab = true;
-			this.bunifuFlatButton2.Location = new System.Drawing.Point(-3, 382);
-			this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-			this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-			this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-			this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
-			this.bunifuFlatButton2.selected = false;
-			this.bunifuFlatButton2.Size = new System.Drawing.Size(252, 65);
-			this.bunifuFlatButton2.TabIndex = 3;
-			this.bunifuFlatButton2.Text = " Product Inventory";
-			this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
-			this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			// 
-			// bunifuFlatButton3
-			// 
-			this.bunifuFlatButton3.Active = false;
-			this.bunifuFlatButton3.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-			this.bunifuFlatButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-			this.bunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.bunifuFlatButton3.BorderRadius = 0;
-			this.bunifuFlatButton3.ButtonText = "Orders";
-			this.bunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.bunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray;
-			this.bunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent;
-			this.bunifuFlatButton3.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton3.Iconimage")));
-			this.bunifuFlatButton3.Iconimage_right = null;
-			this.bunifuFlatButton3.Iconimage_right_Selected = null;
-			this.bunifuFlatButton3.Iconimage_Selected = null;
-			this.bunifuFlatButton3.IconMarginLeft = 0;
-			this.bunifuFlatButton3.IconMarginRight = 0;
-			this.bunifuFlatButton3.IconRightVisible = false;
-			this.bunifuFlatButton3.IconRightZoom = 0D;
-			this.bunifuFlatButton3.IconVisible = true;
-			this.bunifuFlatButton3.IconZoom = 48D;
-			this.bunifuFlatButton3.IsTab = true;
-			this.bunifuFlatButton3.Location = new System.Drawing.Point(-3, 453);
-			this.bunifuFlatButton3.Name = "bunifuFlatButton3";
-			this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-			this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-			this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White;
-			this.bunifuFlatButton3.selected = false;
-			this.bunifuFlatButton3.Size = new System.Drawing.Size(252, 65);
-			this.bunifuFlatButton3.TabIndex = 4;
-			this.bunifuFlatButton3.Text = "Orders";
-			this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.bunifuFlatButton3.Textcolor = System.Drawing.Color.White;
-			this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.bunifuImageButton1.Enabled = false;
+			this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+			this.bunifuImageButton1.ImageActive = null;
+			this.bunifuImageButton1.Location = new System.Drawing.Point(23, 12);
+			this.bunifuImageButton1.Name = "bunifuImageButton1";
+			this.bunifuImageButton1.Size = new System.Drawing.Size(200, 195);
+			this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.bunifuImageButton1.TabIndex = 0;
+			this.bunifuImageButton1.TabStop = false;
+			this.bunifuImageButton1.Zoom = 10;
 			// 
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-			this.panel2.Controls.Add(this.label1);
-			this.panel2.Controls.Add(this.bunifuImageButton2);
-			this.panel2.Controls.Add(this.btnClose);
+			this.panel2.Controls.Add(this.UserFullNameLabel);
+			this.panel2.Controls.Add(this.StoreNameLabel);
+			this.panel2.Controls.Add(this.LogOutButton);
+			this.panel2.Controls.Add(this.CloseButton);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel2.Location = new System.Drawing.Point(252, 0);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(890, 80);
 			this.panel2.TabIndex = 1;
 			// 
-			// bunifuImageButton2
+			// UserFullNameLabel
 			// 
-			this.bunifuImageButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
-			this.bunifuImageButton2.ImageActive = null;
-			this.bunifuImageButton2.Location = new System.Drawing.Point(788, 18);
-			this.bunifuImageButton2.Name = "bunifuImageButton2";
-			this.bunifuImageButton2.Padding = new System.Windows.Forms.Padding(8);
-			this.bunifuImageButton2.Size = new System.Drawing.Size(24, 40);
-			this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.bunifuImageButton2.TabIndex = 4;
-			this.bunifuImageButton2.TabStop = false;
-			this.bunifuImageButton2.Zoom = 10;
+			this.UserFullNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.UserFullNameLabel.AutoSize = true;
+			this.UserFullNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+			this.UserFullNameLabel.ForeColor = System.Drawing.Color.LightGray;
+			this.UserFullNameLabel.Location = new System.Drawing.Point(667, 28);
+			this.UserFullNameLabel.Name = "UserFullNameLabel";
+			this.UserFullNameLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.UserFullNameLabel.Size = new System.Drawing.Size(90, 20);
+			this.UserFullNameLabel.TabIndex = 6;
+			this.UserFullNameLabel.Text = "FULL NAME";
 			// 
-			// btnClose
+			// StoreNameLabel
 			// 
-			this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-			this.btnClose.ImageActive = null;
-			this.btnClose.Location = new System.Drawing.Point(831, 24);
-			this.btnClose.Name = "btnClose";
-			this.btnClose.Size = new System.Drawing.Size(36, 30);
-			this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.btnClose.TabIndex = 3;
-			this.btnClose.TabStop = false;
-			this.btnClose.Zoom = 10;
+			this.StoreNameLabel.AutoSize = true;
+			this.StoreNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+			this.StoreNameLabel.ForeColor = System.Drawing.Color.LightGray;
+			this.StoreNameLabel.Location = new System.Drawing.Point(29, 28);
+			this.StoreNameLabel.Name = "StoreNameLabel";
+			this.StoreNameLabel.Size = new System.Drawing.Size(100, 20);
+			this.StoreNameLabel.TabIndex = 5;
+			this.StoreNameLabel.Text = "STORE NAME";
 			// 
-			// label1
+			// LogOutButton
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-			this.label1.ForeColor = System.Drawing.Color.LightGray;
-			this.label1.Location = new System.Drawing.Point(29, 28);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(100, 20);
-			this.label1.TabIndex = 5;
-			this.label1.Text = "STORE NAME";
+			this.LogOutButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.LogOutButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.LogOutButton.Image = ((System.Drawing.Image)(resources.GetObject("LogOutButton.Image")));
+			this.LogOutButton.ImageActive = null;
+			this.LogOutButton.Location = new System.Drawing.Point(788, 18);
+			this.LogOutButton.Name = "LogOutButton";
+			this.LogOutButton.Padding = new System.Windows.Forms.Padding(8);
+			this.LogOutButton.Size = new System.Drawing.Size(24, 40);
+			this.LogOutButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.LogOutButton.TabIndex = 4;
+			this.LogOutButton.TabStop = false;
+			this.LogOutButton.Zoom = 10;
+			// 
+			// CloseButton
+			// 
+			this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.Image")));
+			this.CloseButton.ImageActive = null;
+			this.CloseButton.Location = new System.Drawing.Point(831, 24);
+			this.CloseButton.Name = "CloseButton";
+			this.CloseButton.Size = new System.Drawing.Size(36, 30);
+			this.CloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.CloseButton.TabIndex = 3;
+			this.CloseButton.TabStop = false;
+			this.CloseButton.Zoom = 10;
+			// 
+			// ContainerPanel
+			// 
+			this.ContainerPanel.Location = new System.Drawing.Point(252, 79);
+			this.ContainerPanel.Name = "ContainerPanel";
+			this.ContainerPanel.Size = new System.Drawing.Size(890, 643);
+			this.ContainerPanel.TabIndex = 2;
 			// 
 			// DashboardFormView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
 			this.ClientSize = new System.Drawing.Size(1142, 722);
+			this.Controls.Add(this.ContainerPanel);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
+			this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "DashboardFormView";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -280,8 +312,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.LogOutButton)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.CloseButton)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -291,12 +323,14 @@
 		private System.Windows.Forms.Panel panel1;
 		private Bunifu.Framework.UI.BunifuFlatButton DashboardButton;
 		private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-		private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
-		private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
-		private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+		private Bunifu.Framework.UI.BunifuFlatButton OrdersButton;
+		private Bunifu.Framework.UI.BunifuFlatButton InventoryButton;
+		private Bunifu.Framework.UI.BunifuFlatButton CheckoutButton;
 		private System.Windows.Forms.Panel panel2;
-		private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
-		private Bunifu.Framework.UI.BunifuImageButton btnClose;
-		private System.Windows.Forms.Label label1;
+		private Bunifu.Framework.UI.BunifuImageButton LogOutButton;
+		private Bunifu.Framework.UI.BunifuImageButton CloseButton;
+		private System.Windows.Forms.Label StoreNameLabel;
+		private System.Windows.Forms.Label UserFullNameLabel;
+		private System.Windows.Forms.Panel ContainerPanel;
 	}
 }

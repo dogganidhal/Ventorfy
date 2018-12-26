@@ -1,4 +1,5 @@
-﻿using Ventorfy.UserInterface.Session;
+﻿using Ventorfy.DataAccess.Repository.Inventory;
+using Ventorfy.UserInterface.Session;
 
 namespace Ventorfy.UserInterface.Dashboard
 {
@@ -6,6 +7,10 @@ namespace Ventorfy.UserInterface.Dashboard
 	{
 
 		private IDashboardFormView _View;
+
+		public DashboardFormPresenter()
+		{
+		}
 
 		public void SetView(IDashboardFormView view)
 		{
@@ -19,9 +24,40 @@ namespace Ventorfy.UserInterface.Dashboard
 
 		public void OnLogOutConfirm()
 		{
-			UserSession.Instance.CurrentUser = null;
+			UserSession.Instance.SetCurrentUser(null);
 			this._View.LaunchAuthFormView();
 		}
 
+		public void LoadData()
+		{
+			var currentUser = UserSession.Instance.GetCurrentUser();
+			this._View.SetUserFullName(currentUser?.FullName);
+			this._View.SetStoreName(currentUser?.Store?.Name);
+			if (currentUser?.Store == null)
+			{
+				this._View.DisplayCreateStoreForm();
+			}
+			this._View.SetOverviewFormSelected();
+		}
+
+		public void OnOverviewButtonClicked()
+		{
+			this._View.SetOverviewFormSelected();
+		}
+
+		public void OnInventoryButtonClicked()
+		{
+			this._View.SetInventoryFormSelected();
+		}
+
+		public void OnCheckoutButtonClicked()
+		{
+			this._View.SetCheckoutFormSelected();
+		}
+
+		public void OnOrdersButtonClicked()
+		{
+			this._View.SetOrderFormSelected();
+		}
 	}
 }

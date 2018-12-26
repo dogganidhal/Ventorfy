@@ -7,6 +7,13 @@ namespace Ventorfy.UserInterface.Dashboard
 
 		void DisplayLogOutConfirmationDialog();
 		void LaunchAuthFormView();
+		void SetUserFullName(string fullName);
+		void SetStoreName(string storeName);
+		void DisplayCreateStoreForm();
+		void SetOverviewFormSelected();
+		void SetInventoryFormSelected();
+		void SetCheckoutFormSelected();
+		void SetOrderFormSelected();
 
 	}
 
@@ -15,6 +22,11 @@ namespace Ventorfy.UserInterface.Dashboard
 
 		void OnLogOutButtonClicked();
 		void OnLogOutConfirm();
+		void LoadData();
+		void OnOverviewButtonClicked();
+		void OnInventoryButtonClicked();
+		void OnCheckoutButtonClicked();
+		void OnOrdersButtonClicked();
 
 	}
 }

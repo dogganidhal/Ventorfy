@@ -11,6 +11,11 @@ namespace Ventorfy.DataAccess.Model.Users
 		public string FullName { get; set; }
 		public string PasswordHash { get; set; }
 		public Store Store { get; set; }
+
+		public User()
+		{
+			
+		}
 		
 		public User(string userName, string fullName, string passwordHash)
 		{

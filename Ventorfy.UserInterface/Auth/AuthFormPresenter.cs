@@ -22,8 +22,7 @@ namespace Ventorfy.UserInterface.Auth
 			this._View.DisplayLoginProgressBar();
 			try
 			{
-				var user = await this._UserRepository.Login(userName, passsword);
-				UserSession.Instance.CurrentUser = user;
+				UserSession.Instance.SetCurrentUser(await this._UserRepository.Login(userName, passsword));
 				this._View.HideLoginProgressBar();
 				this._View.LaunchDashboardForm();
 			} 
@@ -42,7 +41,7 @@ namespace Ventorfy.UserInterface.Auth
 			try
 			{
 				var user = await this._UserRepository.CreateUser(userName, password, fullName);
-				UserSession.Instance.CurrentUser = user;
+				UserSession.Instance.SetCurrentUser(user);
 				this._View.HideSignUpProgressBar();
 				this._View.LaunchDashboardForm();
 			}
