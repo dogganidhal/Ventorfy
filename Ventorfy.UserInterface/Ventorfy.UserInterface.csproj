@@ -83,6 +83,14 @@
       <DependentUpon>AddOrderItemFormView.cs</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\AddOrderItem\AddOrderItemPresenter.cs" />
+    <Compile Include="Dashboard\AddProduct\AddProductFormContract.cs" />
+    <Compile Include="Dashboard\AddProduct\AddProductFormPresenter.cs" />
+    <Compile Include="Dashboard\AddProduct\AddProductFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\AddProduct\AddProductFormView.Designer.cs">
+      <DependentUpon>AddProductFormView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Checkout\CheckoutFormContract.cs" />
     <Compile Include="Dashboard\Checkout\CheckoutFormPresenter.cs" />
     <Compile Include="Dashboard\Checkout\CheckoutFormView.cs">
@@ -107,6 +115,14 @@
     </Compile>
     <Compile Include="Dashboard\DashboardFormContract.cs" />
     <Compile Include="Dashboard\DashboardFormPresenter.cs" />
+    <Compile Include="Dashboard\Inventory\ProductInventoryFormContract.cs" />
+    <Compile Include="Dashboard\Inventory\ProductInventoryFormPresenter.cs" />
+    <Compile Include="Dashboard\Inventory\ProductInventoryFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Inventory\ProductInventoryFormView.Designer.cs">
+      <DependentUpon>ProductInventoryFormView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Overview\OverviewFormContract.cs" />
     <Compile Include="Dashboard\Overview\OverviewFormPresenter.cs" />
     <Compile Include="Dashboard\Overview\OverviewFormView.cs">
