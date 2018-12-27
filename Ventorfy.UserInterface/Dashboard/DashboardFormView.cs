@@ -53,35 +53,17 @@ namespace Ventorfy.UserInterface.Dashboard
 
 		public void SetCheckoutFormSelected()
 		{
-			this.Controls.Remove(this._SelectedForm);
-			this._SelectedForm?.Dispose();
-			this._SelectedForm = new CheckoutFormView();
-			this._SelectedForm.TopLevel = false;
-			this._SelectedForm.Dock = DockStyle.Fill;
-			this.ContainerPanel.Controls.Add(this._SelectedForm);
-			this._SelectedForm.Show();
+			this._SetSelectedForm(new CheckoutFormView());
 		}
 
 		public void SetOverviewFormSelected()
 		{
-			this.Controls.Remove(this._SelectedForm);
-			this._SelectedForm?.Dispose();
-			this._SelectedForm = new OverviewFormView();
-			this._SelectedForm.TopLevel = false;
-			this._SelectedForm.Dock = DockStyle.Fill;
-			this.ContainerPanel.Controls.Add(this._SelectedForm);
-			this._SelectedForm.Show();
+			this._SetSelectedForm(new OverviewFormView());
 		}
 
 		public void SetInventoryFormSelected()
 		{
-			this.Controls.Remove(this._SelectedForm);
-			this._SelectedForm?.Dispose();
-			this._SelectedForm = new ProductInventoryFormView();
-			this._SelectedForm.TopLevel = false;
-			this._SelectedForm.Dock = DockStyle.Fill;
-			this.ContainerPanel.Controls.Add(this._SelectedForm);
-			this._SelectedForm.Show();
+			this._SetSelectedForm(new ProductInventoryFormView());
 		}
 
 		public void SetOrderFormSelected()
@@ -97,6 +79,17 @@ namespace Ventorfy.UserInterface.Dashboard
 		public void SetUserFullName(string fullName)
 		{
 			this.UserFullNameLabel.Text = fullName;
+		}
+
+		private void _SetSelectedForm(Form form)
+		{
+			this.Controls.Remove(this._SelectedForm);
+			this._SelectedForm?.Dispose();
+			this._SelectedForm = form;
+			this._SelectedForm.TopLevel = false;
+			this._SelectedForm.Dock = DockStyle.Fill;
+			this.ContainerPanel.Controls.Add(this._SelectedForm);
+			this._SelectedForm.Show();
 		}
 
 		private void _SetUpView()
