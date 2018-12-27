@@ -38,6 +38,7 @@
 			this.OrderItemTotalLabel = new System.Windows.Forms.Label();
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.TotalPriceLabel = new System.Windows.Forms.Label();
+			this.SubmitOrderButton = new Bunifu.Framework.UI.BunifuTileButton();
 			this.OrderItemsTableLayoutPanel.SuspendLayout();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
@@ -60,6 +61,7 @@
 			this.OrderItemsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.OrderItemsTableLayoutPanel.Size = new System.Drawing.Size(800, 64);
 			this.OrderItemsTableLayoutPanel.TabIndex = 0;
+			this.OrderItemsTableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OrderItemsTableLayoutPanel_Paint);
 			// 
 			// label4
 			// 
@@ -72,6 +74,7 @@
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(194, 25);
 			this.label4.TabIndex = 7;
+			this.label4.Tag = "1002";
 			this.label4.Text = "Count";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
@@ -86,6 +89,7 @@
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(194, 25);
 			this.label3.TabIndex = 6;
+			this.label3.Tag = "1003";
 			this.label3.Text = "Unit price";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
@@ -100,6 +104,7 @@
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(194, 25);
 			this.label1.TabIndex = 5;
+			this.label1.Tag = "1000";
 			this.label1.Text = "Product name";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
@@ -114,6 +119,7 @@
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(194, 25);
 			this.label2.TabIndex = 4;
+			this.label2.Tag = "1001";
 			this.label2.Text = "Reference";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
@@ -154,6 +160,7 @@
 			this.flowLayoutPanel1.Controls.Add(this.AddOrderItemButton);
 			this.flowLayoutPanel1.Controls.Add(this.OrderItemTotalLabel);
 			this.flowLayoutPanel1.Controls.Add(this.TotalPriceLabel);
+			this.flowLayoutPanel1.Controls.Add(this.SubmitOrderButton);
 			this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 397);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -172,6 +179,25 @@
 			this.TotalPriceLabel.TabIndex = 3;
 			this.TotalPriceLabel.Text = "TOTAL PRICE : 0$";
 			this.TotalPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// SubmitOrderButton
+			// 
+			this.SubmitOrderButton.BackColor = System.Drawing.Color.Transparent;
+			this.SubmitOrderButton.color = System.Drawing.Color.Transparent;
+			this.SubmitOrderButton.colorActive = System.Drawing.Color.Transparent;
+			this.SubmitOrderButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.SubmitOrderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+			this.SubmitOrderButton.ForeColor = System.Drawing.Color.White;
+			this.SubmitOrderButton.Image = ((System.Drawing.Image)(resources.GetObject("SubmitOrderButton.Image")));
+			this.SubmitOrderButton.ImagePosition = 20;
+			this.SubmitOrderButton.ImageZoom = 40;
+			this.SubmitOrderButton.LabelPosition = 41;
+			this.SubmitOrderButton.LabelText = "SUBMIT ORDER";
+			this.SubmitOrderButton.Location = new System.Drawing.Point(494, 6);
+			this.SubmitOrderButton.Margin = new System.Windows.Forms.Padding(6);
+			this.SubmitOrderButton.Name = "SubmitOrderButton";
+			this.SubmitOrderButton.Size = new System.Drawing.Size(128, 129);
+			this.SubmitOrderButton.TabIndex = 4;
 			// 
 			// CheckoutFormView
 			// 
@@ -203,5 +229,6 @@
 		private System.Windows.Forms.Label OrderItemTotalLabel;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 		private System.Windows.Forms.Label TotalPriceLabel;
+		private Bunifu.Framework.UI.BunifuTileButton SubmitOrderButton;
 	}
 }

@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using Ventorfy.DataAccess.Model.Products;
+using Ventorfy.DataAccess.Repository;
 using Ventorfy.UserInterface.Dashboard.AddOrderItem;
 
 namespace Ventorfy.UserInterface.Dashboard.Checkout
@@ -10,6 +13,7 @@ namespace Ventorfy.UserInterface.Dashboard.Checkout
 	{
 
 		private ICheckoutFormPresenter _Presenter;
+		private ICollection<Control> _HeaderControls = new List<Control>();
 
 		public CheckoutFormView()
 		{
@@ -20,7 +24,7 @@ namespace Ventorfy.UserInterface.Dashboard.Checkout
 
 		public void CreatePresenter()
 		{
-			this._Presenter = new CheckoutFormPresenter();
+			this._Presenter = new CheckoutFormPresenter(RepositoryFactory.Instance.ClientOrderRepository);
 			this._Presenter.SetView(this);
 		}
 
@@ -54,6 +58,10 @@ namespace Ventorfy.UserInterface.Dashboard.Checkout
 			{
 				this._Presenter.OnAddOrderItemButtonClicked();
 			};
+			this.SubmitOrderButton.Click += (object @object, EventArgs args) =>
+			{
+				this._Presenter.OnSubmitOrderButtonClicked();
+			};
 			
 		}
 
@@ -80,5 +88,24 @@ namespace Ventorfy.UserInterface.Dashboard.Checkout
 			return label;
 		}
 
+		public void FlushOrderItems()
+		{
+			this.OrderItemsTableLayoutPanel.Controls.Clear();
+			foreach(var headerControl in this._HeaderControls)
+			{
+				this.OrderItemsTableLayoutPanel.Controls.Add(headerControl);
+			}
+		}
+
+		private void OrderItemsTableLayoutPanel_Paint(object sender, PaintEventArgs e)
+		{
+			foreach(Control control in this.OrderItemsTableLayoutPanel.Controls)
+			{
+				if (control.Tag != null)
+				{
+					this._HeaderControls.Add(control);
+				}
+			}
+		}
 	}
 }

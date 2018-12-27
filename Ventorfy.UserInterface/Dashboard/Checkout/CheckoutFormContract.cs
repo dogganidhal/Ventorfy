@@ -10,6 +10,7 @@ namespace Ventorfy.UserInterface.Dashboard.Checkout
 		void LaunchSelectOrderItemDialog();
 		void SetTotalPrice(double totalPrice);
 		void SetTotalItems(int items);
+		void FlushOrderItems();
 
 	}
 
@@ -18,6 +19,7 @@ namespace Ventorfy.UserInterface.Dashboard.Checkout
 
 		void OnAddOrderItemButtonClicked();
 		void OnOrderItemAdded(Product product, int count);
+		void OnSubmitOrderButtonClicked();
 
 	}
 }
