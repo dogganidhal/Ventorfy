@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Ventorfy.DataAccess.Model.Inventory;
 using Ventorfy.DataAccess.Repository;
 
 namespace Ventorfy.UserInterface.Dashboard.CreateStore
@@ -22,16 +23,12 @@ namespace Ventorfy.UserInterface.Dashboard.CreateStore
 			this._Presenter.SetView(this);
 		}
 
-		public void Destroy()
-		{
-			this.Close();
-		}
-
 		private void _SetUpView()
 		{
-			this.CreateButton.Click += (object @object, EventArgs args) =>
+			this.CreateButton.Click += async (object @object, EventArgs args) =>
 			{
-				this._Presenter.OnCreateStoreButtonClicked(this.StoreNameTextBox.Text);
+				await this._Presenter.OnCreateStoreButtonClicked(this.StoreNameTextBox.Text);
+				this.DialogResult = DialogResult.OK;
 			};
 		}
 

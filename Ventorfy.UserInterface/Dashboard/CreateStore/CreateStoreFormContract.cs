@@ -1,18 +1,18 @@
-﻿using Ventorfy.UserInterface.MVP;
+﻿using System.Threading.Tasks;
+using Ventorfy.DataAccess.Model.Inventory;
+using Ventorfy.UserInterface.MVP;
 
 namespace Ventorfy.UserInterface.Dashboard.CreateStore
 {
 	public interface ICreateStoreFormView : IView
 	{
 
-		void Destroy();
-
 	}
 
 	public interface ICreateStoreFormPresenter : IPresenter<ICreateStoreFormView>
 	{
 
-		void OnCreateStoreButtonClicked(string name);
+		Task OnCreateStoreButtonClicked(string name);
 		
 	}
 }

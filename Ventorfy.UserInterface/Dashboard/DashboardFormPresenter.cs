@@ -1,4 +1,5 @@
-﻿using Ventorfy.DataAccess.Repository.Inventory;
+﻿using Ventorfy.DataAccess.Model.Inventory;
+using Ventorfy.DataAccess.Repository.Inventory;
 using Ventorfy.UserInterface.Session;
 
 namespace Ventorfy.UserInterface.Dashboard

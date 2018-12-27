@@ -1,4 +1,5 @@
-﻿using Ventorfy.DataAccess.Repository.Inventory;
+﻿using System.Threading.Tasks;
+using Ventorfy.DataAccess.Repository.Inventory;
 using Ventorfy.UserInterface.Session;
 
 namespace Ventorfy.UserInterface.Dashboard.CreateStore
@@ -14,12 +15,11 @@ namespace Ventorfy.UserInterface.Dashboard.CreateStore
 			this._StoreRepository = storeRepository;
 		}
 
-		public async void OnCreateStoreButtonClicked(string name)
+		public async Task OnCreateStoreButtonClicked(string name)
 		{
 			var currentUser = UserSession.Instance.GetCurrentUser();
 			var store = await this._StoreRepository.CreateStore(currentUser, name);
 			currentUser.Store = store;
-			this._View.Destroy();
 		}
 
 		public void SetView(ICreateStoreFormView view)

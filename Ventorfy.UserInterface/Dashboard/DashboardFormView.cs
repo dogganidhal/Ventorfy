@@ -6,6 +6,7 @@ using Ventorfy.UserInterface.Dashboard.CreateStore;
 using Ventorfy.UserInterface.Dashboard.Inventory;
 using Ventorfy.UserInterface.Dashboard.Orders;
 using Ventorfy.UserInterface.Dashboard.Overview;
+using Ventorfy.UserInterface.Session;
 
 namespace Ventorfy.UserInterface.Dashboard
 {
@@ -31,9 +32,11 @@ namespace Ventorfy.UserInterface.Dashboard
 
 		public void DisplayCreateStoreForm()
 		{
-			var storeFormView = new CreateStoreFormView();
-			storeFormView.Show();
-			storeFormView.BringToFront();
+			using (var storeFormView = new CreateStoreFormView())
+			{
+				storeFormView.ShowDialog();
+				this.StoreNameLabel.Text = UserSession.Instance.GetCurrentUser().Store.Name;
+			}
 		}
 
 		public void DisplayLogOutConfirmationDialog()
