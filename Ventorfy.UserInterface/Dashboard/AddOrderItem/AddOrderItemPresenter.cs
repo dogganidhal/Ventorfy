@@ -12,7 +12,7 @@ namespace Ventorfy.UserInterface.Dashboard.AddOrderItem
 
 		private IAddOrderItemFormView _View;
 		private IProductRepository _ProductRepository;
-		private ICollection<Product> _Productions;
+		private ICollection<Product> _Products;
 
 		public AddOrderItemPresenter(IProductRepository productRepository)
 		{
@@ -21,7 +21,7 @@ namespace Ventorfy.UserInterface.Dashboard.AddOrderItem
 
 		public Product GetProductAtIndex(int index)
 		{
-			return this._Productions.ElementAt(index);
+			return this._Products.ElementAt(index);
 		}
 
 		public async void LoadData()
@@ -29,8 +29,8 @@ namespace Ventorfy.UserInterface.Dashboard.AddOrderItem
 			var storeId = UserSession.Instance.GetCurrentUser()?.Store?.Id;
 			if (storeId != null) // Should always be
 			{
-				this._Productions = await this._ProductRepository.GetProductsByStoreId((Guid)storeId);
-				this._View.PopulateProducts(this._Productions);
+				this._Products = await this._ProductRepository.GetProductsByStoreId((Guid)storeId);
+				this._View.PopulateProducts(this._Products);
 			}	
 		}
 

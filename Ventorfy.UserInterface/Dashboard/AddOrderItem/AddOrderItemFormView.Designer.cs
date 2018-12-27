@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddOrderItemFormView));
-			Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+			Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
 			this.ProductsListBox = new System.Windows.Forms.ListBox();
 			this.ProductGroupBox = new System.Windows.Forms.GroupBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -48,9 +48,6 @@
 			this.ProductsListBox.ForeColor = System.Drawing.Color.WhiteSmoke;
 			this.ProductsListBox.FormattingEnabled = true;
 			this.ProductsListBox.ItemHeight = 21;
-			this.ProductsListBox.Items.AddRange(new object[] {
-            "QOIEQBOIUQ00BR1083140EIEQP (Another Test Product)",
-            "AEOFQ91308QEIFb (Test Product)"});
 			this.ProductsListBox.Location = new System.Drawing.Point(3, 29);
 			this.ProductsListBox.Name = "ProductsListBox";
 			this.ProductsListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
@@ -126,13 +123,13 @@
 			this.OkButton.IdleIconRightImage = null;
 			this.OkButton.Location = new System.Drawing.Point(137, 407);
 			this.OkButton.Name = "OkButton";
-			stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-			stateProperties5.BorderRadius = 1;
-			stateProperties5.BorderThickness = 1;
-			stateProperties5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-			stateProperties5.IconLeftImage = null;
-			stateProperties5.IconRightImage = null;
-			this.OkButton.onHoverState = stateProperties5;
+			stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+			stateProperties1.BorderRadius = 1;
+			stateProperties1.BorderThickness = 1;
+			stateProperties1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+			stateProperties1.IconLeftImage = null;
+			stateProperties1.IconRightImage = null;
+			this.OkButton.onHoverState = stateProperties1;
 			this.OkButton.Size = new System.Drawing.Size(210, 45);
 			this.OkButton.TabIndex = 23;
 			this.OkButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

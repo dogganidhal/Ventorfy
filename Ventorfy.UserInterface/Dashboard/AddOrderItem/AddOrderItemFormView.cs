@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Ventorfy.DataAccess.Model.Products;
@@ -45,10 +43,8 @@ namespace Ventorfy.UserInterface.Dashboard.AddOrderItem
 
 		public void PopulateProducts(ICollection<Product> products)
 		{
-			foreach(var product in products)
-			{
-				this.ProductsListBox.Controls.Add(new Label() { Text = $"{product.Reference} ({product.Name})", ForeColor = Color.WhiteSmoke });
-			}
+			this.ProductsListBox.DataSource = null;
+			this.ProductsListBox.DataSource = products.Select(product => $"{product.Reference} ({product.Name})").ToList();
 		}
 
 	}
