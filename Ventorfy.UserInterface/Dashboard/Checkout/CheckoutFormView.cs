@@ -48,7 +48,8 @@ namespace Ventorfy.UserInterface.Dashboard.Checkout
 
 		private void _SetUpView()
 		{
-		
+
+			this.OrderItemsTableLayoutPanel.AutoSize = true;
 			this.AddOrderItemButton.Click += (object @object, EventArgs args) =>
 			{
 				this._Presenter.OnAddOrderItemButtonClicked();
@@ -66,13 +67,16 @@ namespace Ventorfy.UserInterface.Dashboard.Checkout
 
 		private Label _CreateLabel(string text)
 		{
-			var font = new Font(FontFamily.GenericSansSerif, 14);
+			var font = new Font(FontFamily.GenericSansSerif, 12);
 			var label = new Label()
 			{
 				Text = text,
 				Font = font,
-				ForeColor = Color.WhiteSmoke
+				ForeColor = Color.WhiteSmoke,
+				TextAlign = ContentAlignment.MiddleCenter
 			};
+			label.Dock = DockStyle.Fill;
+			label.Margin = new Padding() { Top = 8 };
 			return label;
 		}
 

@@ -67,7 +67,8 @@
 			this.label4.Dock = System.Windows.Forms.DockStyle.Top;
 			this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.label4.Location = new System.Drawing.Point(403, 0);
+			this.label4.Location = new System.Drawing.Point(403, 16);
+			this.label4.Margin = new System.Windows.Forms.Padding(3, 16, 3, 0);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(194, 25);
 			this.label4.TabIndex = 7;
@@ -80,7 +81,8 @@
 			this.label3.Dock = System.Windows.Forms.DockStyle.Top;
 			this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.label3.Location = new System.Drawing.Point(603, 0);
+			this.label3.Location = new System.Drawing.Point(603, 16);
+			this.label3.Margin = new System.Windows.Forms.Padding(3, 16, 3, 0);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(194, 25);
 			this.label3.TabIndex = 6;
@@ -93,7 +95,8 @@
 			this.label1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.label1.Location = new System.Drawing.Point(3, 0);
+			this.label1.Location = new System.Drawing.Point(3, 16);
+			this.label1.Margin = new System.Windows.Forms.Padding(3, 16, 3, 0);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(194, 25);
 			this.label1.TabIndex = 5;
@@ -106,7 +109,8 @@
 			this.label2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.label2.Location = new System.Drawing.Point(203, 0);
+			this.label2.Location = new System.Drawing.Point(203, 16);
+			this.label2.Margin = new System.Windows.Forms.Padding(3, 16, 3, 0);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(194, 25);
 			this.label2.TabIndex = 4;
