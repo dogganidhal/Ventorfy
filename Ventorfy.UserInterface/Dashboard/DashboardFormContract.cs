@@ -13,7 +13,7 @@ namespace Ventorfy.UserInterface.Dashboard
 		void SetOverviewFormSelected();
 		void SetInventoryFormSelected();
 		void SetCheckoutFormSelected();
-		void SetOrderFormSelected();
+		void SetOrdersFormSelected();
 
 	}
 

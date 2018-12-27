@@ -57,7 +57,7 @@ namespace Ventorfy.UserInterface.Dashboard
 
 		public void OnOrdersButtonClicked()
 		{
-			this._View.SetOrderFormSelected();
+			this._View.SetOrdersFormSelected();
 		}
 	}
 }

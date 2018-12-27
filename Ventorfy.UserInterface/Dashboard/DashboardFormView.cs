@@ -4,6 +4,7 @@ using Ventorfy.UserInterface.Auth;
 using Ventorfy.UserInterface.Dashboard.Checkout;
 using Ventorfy.UserInterface.Dashboard.CreateStore;
 using Ventorfy.UserInterface.Dashboard.Inventory;
+using Ventorfy.UserInterface.Dashboard.Orders;
 using Ventorfy.UserInterface.Dashboard.Overview;
 
 namespace Ventorfy.UserInterface.Dashboard
@@ -66,9 +67,9 @@ namespace Ventorfy.UserInterface.Dashboard
 			this._SetSelectedForm(new ProductInventoryFormView());
 		}
 
-		public void SetOrderFormSelected()
+		public void SetOrdersFormSelected()
 		{
-			throw new NotImplementedException();
+			this._SetSelectedForm(new OrdersFormView());
 		}
 
 		public void SetStoreName(string storeName)
@@ -110,6 +111,10 @@ namespace Ventorfy.UserInterface.Dashboard
 			this.InventoryButton.Click += (object @object, EventArgs args) =>
 			{
 				this._Presenter.OnInventoryButtonClicked();
+			};
+			this.OrdersButton.Click += (object @object, EventArgs args) =>
+			{
+				this._Presenter.OnOrdersButtonClicked();
 			};
 		}
 	}

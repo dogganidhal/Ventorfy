@@ -123,6 +123,14 @@
     <Compile Include="Dashboard\Inventory\ProductInventoryFormView.Designer.cs">
       <DependentUpon>ProductInventoryFormView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\Orders\OrdersFormPresenter.cs" />
+    <Compile Include="Dashboard\Orders\OrdersFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Orders\OrdersFormView.Designer.cs">
+      <DependentUpon>OrdersFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Orders\OrdersFormContract.cs" />
     <Compile Include="Dashboard\Overview\OverviewFormContract.cs" />
     <Compile Include="Dashboard\Overview\OverviewFormPresenter.cs" />
     <Compile Include="Dashboard\Overview\OverviewFormView.cs">
@@ -159,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\Inventory\ProductInventoryFormView.resx">
       <DependentUpon>ProductInventoryFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Orders\OrdersFormView.resx">
+      <DependentUpon>OrdersFormView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\Overview\OverviewFormView.resx">
       <DependentUpon>OverviewFormView.cs</DependentUpon>

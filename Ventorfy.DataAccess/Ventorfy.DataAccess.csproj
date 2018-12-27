@@ -47,7 +47,9 @@
       <EmbeddedResource Include="GraphQL\Queries\Product\GetProductLotByProductId.graphql" />
       <None Remove="GraphQL\Mutations\Product\InsertOrderItem.graphql" />
       <None Remove="GraphQL\Queries\Order\GetClientOrdersForStore.graphql" />
-      <EmbeddedResource Include="GraphQL\Queries\Order\GetClientOrdersForStore.graphql" />
+      <EmbeddedResource Include="GraphQL\Queries\Order\GetClientOrdersForStore.graphql">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
       <None Remove="GraphQL\Mutations\Order\InsertClientOrder.graphql" />
       <EmbeddedResource Include="GraphQL\Mutations\Order\InsertClientOrder.graphql">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>

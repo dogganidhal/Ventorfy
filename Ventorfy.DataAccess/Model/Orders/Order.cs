@@ -17,7 +17,7 @@ namespace Ventorfy.DataAccess.Model.Orders
 
 		public double ComputePrice()
 		{
-			return this.Items.Sum(orderItem => orderItem.Product.Price * orderItem.Count);
+			return this.Items?.Sum(orderItem => orderItem.Product.Price * orderItem.Count) ?? 0.0;
 		}
 
 	}

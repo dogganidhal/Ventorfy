@@ -200,6 +200,7 @@
 			this.Controls.Add(this.OkButton);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "AddProductFormView";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "AddProductFormView";
 			this.ResumeLayout(false);
 

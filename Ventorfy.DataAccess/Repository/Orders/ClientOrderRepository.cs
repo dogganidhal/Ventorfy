@@ -97,7 +97,7 @@ namespace Ventorfy.DataAccess.Repository.Orders
 		public async Task<ICollection<ClientOrder>> SelectOrders(Guid storeId, ClientOrderFilter filter)
 		{
 
-			var request = GraphQLQueryManager.GetQueryRequest(GraphQLQueryManager.QueryRequest.GetClientOrderForStore, new
+			var request = GraphQLQueryManager.GetQueryRequest(GraphQLQueryManager.QueryRequest.GetClientOrdersForStore, new
 			{
 				StoreId = storeId
 			});
@@ -105,7 +105,7 @@ namespace Ventorfy.DataAccess.Repository.Orders
 			var response = await this._Client.PostAsync(request);
 			var results = response.GetDataFieldAs<ICollection<ClientOrder>>("ClientOrder");
 
-			return (ICollection<ClientOrder>)results.Where(order => filter(order));
+			return results.Where(order => filter(order)).ToList();
 
 		}
 	}

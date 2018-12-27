@@ -19,13 +19,14 @@ query GetClientOrdersForStore($storeId: ID!) {
         Name
       }
     }
-    ClientOrderItems {
+    Items {
       Id
       Count
       Product {
         Id
         Name
         Reference
+				Price
         ProductLot {
           Id
           Quantity
