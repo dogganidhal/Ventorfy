@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using Ventorfy.DataAccess.Repository;
 
 namespace Ventorfy.UserInterface.Dashboard.AddProduct
 {
@@ -13,33 +12,43 @@ namespace Ventorfy.UserInterface.Dashboard.AddProduct
 		{
 			InitializeComponent();
 			this.CreatePresenter();
+			this.OkButton.Click += (object @object, EventArgs args) =>
+			{
+				this.DialogResult = DialogResult.OK;
+				this.Hide();
+			};
 		}
 
 		public void CreatePresenter()
 		{
-			this._Presenter = new AddProductFormPresenter(RepositoryFactory.Instance.ProductRepository);
+			this._Presenter = new AddProductFormPresenter();
 			this._Presenter.SetView(this);
-			this._Presenter.LoadData();
 		}
 
 		public double GetPrice()
 		{
-			throw new NotImplementedException();
+			return double.Parse(this.UnitPriceTextBox.Text);
 		}
 
 		public string GetProductCategoryName()
 		{
-			throw new NotImplementedException();
+			return this.CategoryNameTextBox.Text;
 		}
 
 		public string GetProductName()
 		{
-			throw new NotImplementedException();
+			return this.ProductNameTextBox.Text;
 		}
 
 		public string GetProductReference()
 		{
-			throw new NotImplementedException();
+			return this.ProductReferenceTextBox.Text;
 		}
+
+		public int GetQuantity()
+		{
+			return int.Parse(this.QuantityTextBox.Text);
+		}
+
 	}
 }

@@ -9,6 +9,7 @@ namespace Ventorfy.UserInterface.Dashboard.Inventory
 
 		void PopulateProducts(ICollection<Product> products);
 		void LaunchAddProductDialog();
+		void AppendToProductList(Product product);
 
 	}
 	
@@ -17,7 +18,7 @@ namespace Ventorfy.UserInterface.Dashboard.Inventory
 
 		void LoadData();
 		void OnAddProductButtonClicked();
-		void OnAddProductSubmit(string reference, double price, string categoryName, string name = null);
+		void OnAddProductSubmit(string reference, double price, string categoryName, int quantity, string name = null);
 
 	}
 }

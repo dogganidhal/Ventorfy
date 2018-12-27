@@ -1,6 +1,4 @@
-﻿using System;
-using Ventorfy.DataAccess.Model.Products;
-using Ventorfy.DataAccess.Repository.Products;
+﻿using Ventorfy.DataAccess.Repository.Products;
 using Ventorfy.UserInterface.Session;
 
 namespace Ventorfy.UserInterface.Dashboard.Inventory
@@ -27,7 +25,7 @@ namespace Ventorfy.UserInterface.Dashboard.Inventory
 			this._View.LaunchAddProductDialog();
 		}
 
-		public async void OnAddProductSubmit(string reference, double price, string categoryName, string name = null)
+		public async void OnAddProductSubmit(string reference, double price, string categoryName, int quantity, string name = null)
 		{
 			var productCategory = await this._ProductRepository.CreateProductCategory(categoryName);
 			var product = await this._ProductRepository.CreateProduct(
@@ -37,7 +35,8 @@ namespace Ventorfy.UserInterface.Dashboard.Inventory
 				category: productCategory, 
 				name: name
 			);
-
+			product.ProductLot = await this._ProductRepository.AlterQuantity(product.ProductLot, (oldQuantity) => oldQuantity + quantity);
+			this._View.AppendToProductList(product);
 		}
 
 		public void SetView(IProductInventoryFormView view)

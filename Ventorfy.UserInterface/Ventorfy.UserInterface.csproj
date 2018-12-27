@@ -145,6 +145,9 @@
     <EmbeddedResource Include="Dashboard\AddOrderItem\AddOrderItemFormView.resx">
       <DependentUpon>AddOrderItemFormView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\AddProduct\AddProductFormView.resx">
+      <DependentUpon>AddProductFormView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\Checkout\CheckoutFormView.resx">
       <DependentUpon>CheckoutFormView.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\DashboardFormView.resx">
       <DependentUpon>DashboardFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\Inventory\ProductInventoryFormView.resx">
+      <DependentUpon>ProductInventoryFormView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\Overview\OverviewFormView.resx">
       <DependentUpon>OverviewFormView.cs</DependentUpon>

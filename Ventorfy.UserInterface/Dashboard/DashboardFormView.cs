@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using Ventorfy.UserInterface.Auth;
 using Ventorfy.UserInterface.Dashboard.Checkout;
 using Ventorfy.UserInterface.Dashboard.CreateStore;
+using Ventorfy.UserInterface.Dashboard.Inventory;
 using Ventorfy.UserInterface.Dashboard.Overview;
 
 namespace Ventorfy.UserInterface.Dashboard
@@ -11,8 +12,7 @@ namespace Ventorfy.UserInterface.Dashboard
 	{
 
 		private IDashboardFormPresenter _Presenter;
-		private OverviewFormView _OverviewFormView = new OverviewFormView();
-		private CheckoutFormView _CheckoutFormView = new CheckoutFormView(); 
+		private Form _SelectedForm;
 
 		public DashboardFormView()
 		{
@@ -53,19 +53,35 @@ namespace Ventorfy.UserInterface.Dashboard
 
 		public void SetCheckoutFormSelected()
 		{
-			this._CheckoutFormView.Show();
-			this._CheckoutFormView.BringToFront();
+			this.Controls.Remove(this._SelectedForm);
+			this._SelectedForm?.Dispose();
+			this._SelectedForm = new CheckoutFormView();
+			this._SelectedForm.TopLevel = false;
+			this._SelectedForm.Dock = DockStyle.Fill;
+			this.ContainerPanel.Controls.Add(this._SelectedForm);
+			this._SelectedForm.Show();
 		}
 
 		public void SetOverviewFormSelected()
 		{
-			this._OverviewFormView.Show();
-			this._OverviewFormView.BringToFront();
+			this.Controls.Remove(this._SelectedForm);
+			this._SelectedForm?.Dispose();
+			this._SelectedForm = new OverviewFormView();
+			this._SelectedForm.TopLevel = false;
+			this._SelectedForm.Dock = DockStyle.Fill;
+			this.ContainerPanel.Controls.Add(this._SelectedForm);
+			this._SelectedForm.Show();
 		}
 
 		public void SetInventoryFormSelected()
 		{
-			throw new NotImplementedException();
+			this.Controls.Remove(this._SelectedForm);
+			this._SelectedForm?.Dispose();
+			this._SelectedForm = new ProductInventoryFormView();
+			this._SelectedForm.TopLevel = false;
+			this._SelectedForm.Dock = DockStyle.Fill;
+			this.ContainerPanel.Controls.Add(this._SelectedForm);
+			this._SelectedForm.Show();
 		}
 
 		public void SetOrderFormSelected()
@@ -85,22 +101,22 @@ namespace Ventorfy.UserInterface.Dashboard
 
 		private void _SetUpView()
 		{
-			
-			this._CheckoutFormView.TopLevel = false;
-			this._CheckoutFormView.Dock = DockStyle.Fill;
-			this.ContainerPanel.Controls.Add(this._CheckoutFormView);
-
-			this._OverviewFormView.TopLevel = false;
-			this._OverviewFormView.Dock = DockStyle.Fill;
-			this.ContainerPanel.Controls.Add(this._OverviewFormView);
-
+		
 			this.LogOutButton.Click += (object @object, EventArgs args) =>
 			{
 				this._Presenter.OnLogOutButtonClicked();
 			};
+			this.DashboardButton.Click += (object @object, EventArgs args) =>
+			{
+				this._Presenter.OnOverviewButtonClicked();
+			};
 			this.CheckoutButton.Click += (object @object, EventArgs args) =>
 			{
 				this._Presenter.OnCheckoutButtonClicked();
+			};
+			this.InventoryButton.Click += (object @object, EventArgs args) =>
+			{
+				this._Presenter.OnInventoryButtonClicked();
 			};
 		}
 	}

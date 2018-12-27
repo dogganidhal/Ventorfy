@@ -11,14 +11,12 @@ namespace Ventorfy.UserInterface.Dashboard.AddProduct
 		string GetProductName();
 		double GetPrice();
 		string GetProductCategoryName();
+		int GetQuantity();
 
 	}
 
 	public interface IAddProductFormPresenter : IPresenter<IAddProductFormView>
 	{
-
-		string GetProductCategoryAtIndex(int index);
-		void LoadData();
 
 	}
 }

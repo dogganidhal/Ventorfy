@@ -95,7 +95,7 @@ namespace Ventorfy.DataAccess.Repository.Products
 			var alterProductLotQuantityRequest = GraphQLMutationManager.GetMutationRequest(
 				GraphQLMutationManager.MutationRequest.AlterProductLotQuantity, new
 				{
-					ProductId = productLot.Id,  
+					ProductLotId = productLot.Id,  
 					NewQuantity = @delegate(productLot.Quantity)
 				});
 			var alterProductLotQuantityResponse = await this._Client.PostAsync(alterProductLotQuantityRequest);

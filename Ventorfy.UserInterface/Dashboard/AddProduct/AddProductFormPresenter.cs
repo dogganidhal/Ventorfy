@@ -9,22 +9,6 @@ namespace Ventorfy.UserInterface.Dashboard.AddProduct
 	{
 
 		private IAddProductFormView _View;
-		private IProductRepository _ProductRepository;
-		private ICollection<string> _ProductCategories = new List<string>();
-
-		public AddProductFormPresenter(IProductRepository productRepository) 
-		{
-			this._ProductRepository = productRepository;
-		}
-		
-		public string GetProductCategoryAtIndex(int index)
-		{
-			return this._ProductCategories.ElementAt(index);
-		}
-
-		public async void LoadData()
-		{
-		}
 
 		public void SetView(IAddProductFormView view)
 		{
