@@ -10,7 +10,7 @@ namespace Ventorfy.UserInterface.Dashboard.Overview
 	public interface IOverviewFormView : IView
 	{
 
-		void PopulateProfitsProgress();
+		void PopulateProfitsProgress(List<double> profits);
 		void PopulateRecentOrders(ICollection<ClientOrder> orders);
 		void PopulateRecentProducts(ICollection<Product> products);
 		void PopulateStaffMembers(ICollection<User> members);

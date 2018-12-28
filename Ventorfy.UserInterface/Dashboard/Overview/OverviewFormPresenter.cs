@@ -1,6 +1,7 @@
 ﻿
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Ventorfy.DataAccess.Repository.Inventory;
 using Ventorfy.DataAccess.Repository.Orders;
@@ -37,16 +38,24 @@ namespace Ventorfy.UserInterface.Dashboard.Overview
 
 			var store = UserSession.Instance.GetCurrentUser().Store;
 			var staffMembers = await this._UserRepository.GetStoreStaffMembers(store);
-			var recentOrders = (await this._OrderRepository.SelectOrders(store.Id, (order) =>
+			var orders = (await this._OrderRepository.SelectOrders(store.Id, (order) =>
 			{
 				return DateTime.UtcNow.Subtract(order.Date).TotalDays < 7;
-			})).OrderBy(order => order.Date).Reverse().Take(5).ToList();
+			}));
 			var recentProducts = (await this._ProductRepository.GetProductsByStoreId(store.Id))
 				.OrderBy(product => product.Created).Reverse().Take(5).ToList();
 
-			this._View.PopulateRecentOrders(recentOrders);
+			this._View.PopulateRecentOrders(orders.OrderBy(order => order.Date).Reverse().Take(5).ToList());
 			this._View.PopulateRecentProducts(recentProducts);
 			this._View.PopulateStaffMembers(staffMembers);
+
+			var profits = new List<double>();
+			for (int day = 0; day < 7; day++)
+			{
+				var dayOrders = orders.Where(order => (int)DateTime.UtcNow.Subtract(order.Date).TotalDays == day);
+				profits.Add(dayOrders.Sum(order => order.ComputePrice()));
+			}
+			this._View.PopulateProfitsProgress(profits);
 
 		}
 
