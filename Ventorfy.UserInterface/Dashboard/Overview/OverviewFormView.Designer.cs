@@ -28,9 +28,11 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OverviewFormView));
+			Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
 			this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
@@ -45,6 +47,9 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.AddStaffMemberButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.bunifuCards3.SuspendLayout();
 			this.bunifuCards2.SuspendLayout();
@@ -52,6 +57,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.ProfitChart)).BeginInit();
 			this.NewestProductsCard.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
+			this.panel1.SuspendLayout();
+			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -80,8 +87,8 @@
 			this.bunifuCards3.BorderRadius = 5;
 			this.bunifuCards3.BottomSahddow = true;
 			this.bunifuCards3.color = System.Drawing.Color.Tomato;
-			this.bunifuCards3.Controls.Add(this.StaffMembersTablePanelLayout);
-			this.bunifuCards3.Controls.Add(this.label3);
+			this.bunifuCards3.Controls.Add(this.panel2);
+			this.bunifuCards3.Controls.Add(this.panel1);
 			this.bunifuCards3.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.bunifuCards3.LeftSahddow = false;
 			this.bunifuCards3.Location = new System.Drawing.Point(3, 253);
@@ -127,18 +134,18 @@
 			// 
 			// ProfitChart
 			// 
-			chartArea6.Name = "ChartArea1";
-			this.ProfitChart.ChartAreas.Add(chartArea6);
+			chartArea4.Name = "ChartArea1";
+			this.ProfitChart.ChartAreas.Add(chartArea4);
 			this.ProfitChart.Dock = System.Windows.Forms.DockStyle.Fill;
-			legend6.Name = "Legend1";
-			this.ProfitChart.Legends.Add(legend6);
+			legend4.Name = "Legend1";
+			this.ProfitChart.Legends.Add(legend4);
 			this.ProfitChart.Location = new System.Drawing.Point(3, 3);
 			this.ProfitChart.Name = "ProfitChart";
 			this.ProfitChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-			series6.ChartArea = "ChartArea1";
-			series6.Legend = "Legend1";
-			series6.Name = "Series1";
-			this.ProfitChart.Series.Add(series6);
+			series4.ChartArea = "ChartArea1";
+			series4.Legend = "Legend1";
+			series4.Name = "Series1";
+			this.ProfitChart.Series.Add(series4);
 			this.ProfitChart.Size = new System.Drawing.Size(381, 205);
 			this.ProfitChart.TabIndex = 1;
 			this.ProfitChart.Text = "chart1";
@@ -226,24 +233,25 @@
 			// 
 			// StaffMembersTablePanelLayout
 			// 
+			this.StaffMembersTablePanelLayout.AutoScroll = true;
 			this.StaffMembersTablePanelLayout.ColumnCount = 2;
 			this.StaffMembersTablePanelLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.StaffMembersTablePanelLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.StaffMembersTablePanelLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.StaffMembersTablePanelLayout.Location = new System.Drawing.Point(0, 30);
+			this.StaffMembersTablePanelLayout.Location = new System.Drawing.Point(0, 0);
 			this.StaffMembersTablePanelLayout.Name = "StaffMembersTablePanelLayout";
 			this.StaffMembersTablePanelLayout.RowCount = 1;
 			this.StaffMembersTablePanelLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.StaffMembersTablePanelLayout.Size = new System.Drawing.Size(387, 212);
+			this.StaffMembersTablePanelLayout.Size = new System.Drawing.Size(387, 204);
 			this.StaffMembersTablePanelLayout.TabIndex = 10;
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+			this.label3.Dock = System.Windows.Forms.DockStyle.Left;
 			this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.label3.Location = new System.Drawing.Point(0, 5);
+			this.label3.Location = new System.Drawing.Point(0, 0);
 			this.label3.Margin = new System.Windows.Forms.Padding(3, 16, 3, 0);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(138, 25);
@@ -281,6 +289,58 @@
 			this.tableLayoutPanel2.Size = new System.Drawing.Size(387, 211);
 			this.tableLayoutPanel2.TabIndex = 7;
 			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.AddStaffMemberButton);
+			this.panel1.Controls.Add(this.label3);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel1.Location = new System.Drawing.Point(0, 5);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(387, 33);
+			this.panel1.TabIndex = 11;
+			// 
+			// panel2
+			// 
+			this.panel2.Controls.Add(this.StaffMembersTablePanelLayout);
+			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel2.Location = new System.Drawing.Point(0, 38);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(387, 204);
+			this.panel2.TabIndex = 12;
+			// 
+			// AddStaffMemberButton
+			// 
+			this.AddStaffMemberButton.BackColor = System.Drawing.Color.Transparent;
+			this.AddStaffMemberButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddStaffMemberButton.BackgroundImage")));
+			this.AddStaffMemberButton.ButtonText = "Add";
+			this.AddStaffMemberButton.ButtonTextMarginLeft = 0;
+			this.AddStaffMemberButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+			this.AddStaffMemberButton.DisabledFillColor = System.Drawing.Color.Gray;
+			this.AddStaffMemberButton.DisabledForecolor = System.Drawing.Color.White;
+			this.AddStaffMemberButton.Dock = System.Windows.Forms.DockStyle.Right;
+			this.AddStaffMemberButton.ForeColor = System.Drawing.Color.White;
+			this.AddStaffMemberButton.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+			this.AddStaffMemberButton.IconPadding = 10;
+			this.AddStaffMemberButton.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+			this.AddStaffMemberButton.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+			this.AddStaffMemberButton.IdleBorderRadius = 1;
+			this.AddStaffMemberButton.IdleBorderThickness = 0;
+			this.AddStaffMemberButton.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+			this.AddStaffMemberButton.IdleIconLeftImage = null;
+			this.AddStaffMemberButton.IdleIconRightImage = null;
+			this.AddStaffMemberButton.Location = new System.Drawing.Point(298, 0);
+			this.AddStaffMemberButton.Name = "AddStaffMemberButton";
+			stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+			stateProperties4.BorderRadius = 1;
+			stateProperties4.BorderThickness = 1;
+			stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+			stateProperties4.IconLeftImage = null;
+			stateProperties4.IconRightImage = null;
+			this.AddStaffMemberButton.onHoverState = stateProperties4;
+			this.AddStaffMemberButton.Size = new System.Drawing.Size(89, 33);
+			this.AddStaffMemberButton.TabIndex = 10;
+			this.AddStaffMemberButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// OverviewFormView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,7 +353,6 @@
 			this.Text = "OverviewFormView";
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.bunifuCards3.ResumeLayout(false);
-			this.bunifuCards3.PerformLayout();
 			this.bunifuCards2.ResumeLayout(false);
 			this.bunifuCards2.PerformLayout();
 			this.bunifuCards1.ResumeLayout(false);
@@ -302,6 +361,9 @@
 			this.NewestProductsCard.ResumeLayout(false);
 			this.NewestProductsCard.PerformLayout();
 			this.tableLayoutPanel2.ResumeLayout(false);
+			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
+			this.panel2.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -322,5 +384,8 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel panel1;
+		private Bunifu.UI.WinForms.BunifuButton.BunifuButton AddStaffMemberButton;
 	}
 }

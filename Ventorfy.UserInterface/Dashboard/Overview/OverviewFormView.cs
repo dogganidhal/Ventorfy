@@ -25,7 +25,8 @@ namespace Ventorfy.UserInterface.Dashboard.Overview
 
 		public void AppendStaffMember(User member)
 		{
-			throw new NotImplementedException();
+			this.StaffMembersTablePanelLayout.Controls.Add(this._CreateLabel(member.UserName));
+			this.StaffMembersTablePanelLayout.Controls.Add(this._CreateLabel(member.FullName));
 		}
 
 		public void CreatePresenter()
@@ -83,6 +84,10 @@ namespace Ventorfy.UserInterface.Dashboard.Overview
 		private void _SetUpView()
 		{
 
+			this.AddStaffMemberButton.Click += (object @object, EventArgs args) =>
+			{
+				this._Presenter.OnAddStaffMemberButtonClicked();
+			};
 			var earningsSeries = new Series
 			{
 				Name = "Earnings",

@@ -1,9 +1,7 @@
 ﻿
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using Ventorfy.DataAccess.Model.Orders;
 using Ventorfy.DataAccess.Repository.Inventory;
 using Ventorfy.DataAccess.Repository.Orders;
 using Ventorfy.DataAccess.Repository.Products;

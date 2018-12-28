@@ -1,12 +1,9 @@
-﻿query GetStoreStaffMembers($storeId: ID!, $storeAdminId: ID!) {
+﻿query GetStoreStaffMembers($storeId: ID!) {
   User(where: {
-    StoreId: {
-      _eq: $storeId
-    }
     Store: {
-      AdminId: {
-        _neq: $storeAdminId
-      }
+      Id: {
+      	_eq: $storeId
+    	}
     }
   }) {
     Id

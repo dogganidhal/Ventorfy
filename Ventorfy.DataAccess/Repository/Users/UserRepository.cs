@@ -47,8 +47,7 @@ namespace Ventorfy.DataAccess.Repository.Users
 			var request = GraphQLQueryManager.GetQueryRequest(GraphQLQueryManager.QueryRequest.GetStoreStaffMembers,
 			new
 			{
-				StoreId = store.Id,
-				StoreAdminId = store.Admin.Id
+				StoreId = store.Id
 			});
 			var response = await this._Client.PostAsync(request);
 			return response.GetDataFieldAs<ICollection<User>>("User");
