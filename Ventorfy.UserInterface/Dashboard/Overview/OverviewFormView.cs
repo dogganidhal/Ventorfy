@@ -51,22 +51,33 @@ namespace Ventorfy.UserInterface.Dashboard.Overview
 
 		public void PopulateProfitsProgress()
 		{
-			throw new NotImplementedException();
+			
 		}
 
 		public void PopulateRecentOrders(ICollection<ClientOrder> orders)
 		{
-			throw new NotImplementedException();
+			foreach(var order in orders)
+			{
+				var orderDate = $"{order.Date.ToShortDateString()} {order.Date.ToShortTimeString()}";
+				this.RecentOrdersTablePanelLayout.Controls.Add(this._CreateLabel($"{orderDate} {order.ComputePrice()}$"));
+			}
 		}
 
 		public void PopulateRecentProducts(ICollection<Product> products)
 		{
-			throw new NotImplementedException();
+			foreach (var product in products)
+			{
+				this.RecentProductsTablePanelLayout.Controls.Add(this._CreateLabel($"{product.Reference} ({product.Name})"));
+			}
 		}
 
 		public void PopulateStaffMembers(ICollection<User> members)
 		{
-			throw new NotImplementedException();
+			foreach (var member in members)
+			{
+				this.StaffMembersTablePanelLayout.Controls.Add(this._CreateLabel(member.UserName));
+				this.StaffMembersTablePanelLayout.Controls.Add(this._CreateLabel(member.FullName));
+			}
 		}
 
 		private void _SetUpView()
@@ -111,6 +122,20 @@ namespace Ventorfy.UserInterface.Dashboard.Overview
 
 		}
 
+		private Label _CreateLabel(string text)
+		{
+			var font = new Font(FontFamily.GenericSansSerif, 12);
+			var label = new Label()
+			{
+				Text = text,
+				Font = font,
+				ForeColor = Color.WhiteSmoke,
+				TextAlign = ContentAlignment.MiddleCenter
+			};
+			label.Dock = DockStyle.Fill;
+			label.Margin = new Padding() { Top = 8 };
+			return label;
+		}
 
 	}
 }

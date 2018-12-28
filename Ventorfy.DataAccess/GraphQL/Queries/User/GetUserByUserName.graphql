@@ -11,6 +11,11 @@ query GetUserByUserName($userName: String) {
     Store {
       Id
       Name
+			Admin {
+				Id
+				UserName
+				FullName
+			}
     }
   }
 }

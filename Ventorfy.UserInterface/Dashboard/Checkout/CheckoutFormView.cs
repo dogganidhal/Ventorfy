@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 using Ventorfy.DataAccess.Model.Products;
 using Ventorfy.DataAccess.Repository;

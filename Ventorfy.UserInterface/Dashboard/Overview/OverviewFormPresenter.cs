@@ -42,8 +42,9 @@ namespace Ventorfy.UserInterface.Dashboard.Overview
 			var recentOrders = (await this._OrderRepository.SelectOrders(store.Id, (order) =>
 			{
 				return DateTime.UtcNow.Subtract(order.Date).TotalDays < 7;
-			})).OrderBy(order => order.Date).Take(3).ToList();
-			var recentProducts = (await this._ProductRepository.GetProductsByStoreId(store.Id)).OrderBy(product => product.Created).Take(3).ToList();
+			})).OrderBy(order => order.Date).Reverse().Take(5).ToList();
+			var recentProducts = (await this._ProductRepository.GetProductsByStoreId(store.Id))
+				.OrderBy(product => product.Created).Reverse().Take(5).ToList();
 
 			this._View.PopulateRecentOrders(recentOrders);
 			this._View.PopulateRecentProducts(recentProducts);

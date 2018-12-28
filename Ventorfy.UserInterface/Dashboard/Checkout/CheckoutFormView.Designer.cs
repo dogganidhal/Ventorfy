@@ -145,7 +145,7 @@
 			// OrderItemTotalLabel
 			// 
 			this.OrderItemTotalLabel.AutoSize = true;
-			this.OrderItemTotalLabel.Dock = System.Windows.Forms.DockStyle.Right;
+			this.OrderItemTotalLabel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.OrderItemTotalLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.OrderItemTotalLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
 			this.OrderItemTotalLabel.Location = new System.Drawing.Point(143, 0);
@@ -170,7 +170,7 @@
 			// TotalPriceLabel
 			// 
 			this.TotalPriceLabel.AutoSize = true;
-			this.TotalPriceLabel.Dock = System.Windows.Forms.DockStyle.Right;
+			this.TotalPriceLabel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.TotalPriceLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.TotalPriceLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
 			this.TotalPriceLabel.Location = new System.Drawing.Point(327, 0);
