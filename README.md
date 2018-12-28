@@ -3,7 +3,7 @@ Basic inventory management Windows application
 
 School project at [CFA Insta](https://www.cfa-insta.fr/)</br></br>
 
-**Deadline** : 4 days
+**Deadline** : 1 week
 
 **Design Pattern** : Model View Presenter
 
