@@ -75,6 +75,12 @@
   <ItemGroup>
     <Compile Include="Auth\AuthFormContract.cs" />
     <Compile Include="Auth\AuthFormPresenter.cs" />
+    <Compile Include="Dashboard\AddMember\AddMemberFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\AddMember\AddMemberFormView.Designer.cs">
+      <DependentUpon>AddMemberFormView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\AddOrderItem\AddOrderItemFormContract.cs" />
     <Compile Include="Dashboard\AddOrderItem\AddOrderItemFormView.cs">
       <SubType>Form</SubType>
@@ -150,6 +156,9 @@
       <DependentUpon>AuthFormView.cs</DependentUpon>
     </Compile>
     <Compile Include="Session\UserSession.cs" />
+    <EmbeddedResource Include="Dashboard\AddMember\AddMemberFormView.resx">
+      <DependentUpon>AddMemberFormView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\AddOrderItem\AddOrderItemFormView.resx">
       <DependentUpon>AddOrderItemFormView.cs</DependentUpon>
     </EmbeddedResource>

@@ -11,6 +11,7 @@ namespace Ventorfy.DataAccess.Model.Users
 		public string FullName { get; set; }
 		public string PasswordHash { get; set; }
 		public Store Store { get; set; }
+		public DateTime Created { get; set; }
 
 		public User()
 		{

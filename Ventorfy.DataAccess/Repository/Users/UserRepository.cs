@@ -7,6 +7,7 @@ using Ventorfy.Common.Utils;
 using Ventorfy.DataAccess.GraphQL;
 using Ventorfy.DataAccess.GraphQL.Mutations;
 using Ventorfy.DataAccess.GraphQL.Queries;
+using Ventorfy.DataAccess.Model.Inventory;
 using Ventorfy.DataAccess.Model.Users;
 
 namespace Ventorfy.DataAccess.Repository.Users
@@ -39,6 +40,18 @@ namespace Ventorfy.DataAccess.Repository.Users
 
 			return insertResult.Result.First();
 
+		}
+
+		public async Task<ICollection<User>> GetStoreStaffMembers(Store store)
+		{
+			var request = GraphQLQueryManager.GetQueryRequest(GraphQLQueryManager.QueryRequest.GetStoreStaffMembers,
+			new
+			{
+				StoreId = store.Id,
+				StoreAdminId = store.Admin.Id
+			});
+			var response = await this._Client.PostAsync(request);
+			return response.GetDataFieldAs<ICollection<User>>("User");
 		}
 
 		public async Task<User> Login(string userName, string password)

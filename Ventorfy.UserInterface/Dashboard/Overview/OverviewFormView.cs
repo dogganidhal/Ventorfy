@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using Ventorfy.DataAccess.Model.Orders;
+using Ventorfy.DataAccess.Model.Products;
+using Ventorfy.DataAccess.Model.Users;
+using Ventorfy.DataAccess.Repository;
+using Ventorfy.UserInterface.Dashboard.AddMember;
 
 namespace Ventorfy.UserInterface.Dashboard.Overview
 {
@@ -23,11 +23,50 @@ namespace Ventorfy.UserInterface.Dashboard.Overview
 			this._SetUpView();
 		}
 
+		public void AppendStaffMember(User member)
+		{
+			throw new NotImplementedException();
+		}
+
 		public void CreatePresenter()
 		{
-			this._Presenter = new OverviewFormPresenter();
+			this._Presenter = new OverviewFormPresenter(
+				orderRepository: RepositoryFactory.Instance.ClientOrderRepository,
+				userRepository: RepositoryFactory.Instance.UserRepository,
+				storeRepository: RepositoryFactory.Instance.StoreRepository,
+				productRepository: RepositoryFactory.Instance.ProductRepository
+			);
 			this._Presenter.SetView(this);
 			this._Presenter.LoadData();
+		}
+
+		public void LaunchAddStaffMemberDialog()
+		{
+			using (var addMemberFormView = new AddMemberFormView())
+			{
+				addMemberFormView.ShowDialog();
+				this._Presenter.SubmitStaffMember(addMemberFormView.GetUserName(), addMemberFormView.GetFullName(), addMemberFormView.GetPassword());
+			}
+		}
+
+		public void PopulateProfitsProgress()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void PopulateRecentOrders(ICollection<ClientOrder> orders)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void PopulateRecentProducts(ICollection<Product> products)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void PopulateStaffMembers(ICollection<User> members)
+		{
+			throw new NotImplementedException();
 		}
 
 		private void _SetUpView()

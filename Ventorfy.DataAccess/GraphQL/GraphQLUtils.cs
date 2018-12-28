@@ -1,7 +1,5 @@
 using System;
 using GraphQL.Client;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace Ventorfy.DataAccess.GraphQL
 {

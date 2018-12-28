@@ -1,0 +1,22 @@
+﻿query GetStoreStaffMembers($storeId: ID!, $storeAdminId: ID!) {
+  User(where: {
+    StoreId: {
+      _eq: $storeId
+    }
+    Store: {
+      AdminId: {
+        _neq: $storeAdminId
+      }
+    }
+  }) {
+    Id
+    UserName
+    FullName
+    PasswordHash
+    Created
+    Store {
+      Id
+      Name
+    }
+  }
+}

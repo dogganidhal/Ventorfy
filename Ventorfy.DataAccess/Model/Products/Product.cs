@@ -14,6 +14,7 @@ namespace Ventorfy.DataAccess.Model.Products
 		public double Price { get; set; }
 		public Provider Provider { get; set; }
 		public ProductLot ProductLot { get; set; }
+		public DateTime Created { get; set; }
 
 	}
 }
